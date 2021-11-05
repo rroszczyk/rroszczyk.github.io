@@ -37,3 +37,5 @@ paginate_path: "/page/:num"
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
 
 remote_theme: artemsheludko/flexible-jekyll
+
+theme: jekyll-theme-minimal
