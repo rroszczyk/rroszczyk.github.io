@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
+gem "jekyll", "~> 4.0.0"
+gem "bundler"
+gem "jekyll-sitemap"
+gem "jekyll-paginate"
+gem "jemoji"
 
-group :jekyll_plugins do
-  gem "jekyll-sitemap"
-  gem "jekyll-paginate"
-  gem "jemoji"
-end
