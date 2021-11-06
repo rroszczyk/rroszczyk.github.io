@@ -15,12 +15,6 @@ html {
   /* 2 */
 }
 
-.text-justify {
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto
-}
-
 /* Sections
    ========================================================================== */
 /**
