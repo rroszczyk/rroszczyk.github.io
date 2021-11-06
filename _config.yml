@@ -12,7 +12,8 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: Radoslaw Roszczyk # add your name
 author-img: radoslaw_roszczyk_192.jpg # add your photo
-about-author: I am a software developer, researcher, and academic. Always hungry to keep learning. # add description
+#about-author: I am a software developer, researcher, and academic. Always hungry to keep learning. # add description
+about-author: Thoughts, stories and ideas.
 social-twitter: # add your Twitter handle
 social-facebook: # add your Facebook handle
 social-github: rroszczyk # add your Github handle
