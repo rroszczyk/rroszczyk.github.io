@@ -147,3 +147,35 @@ table tfoot td {
 
 /* - - - - - - - - - - Media Styles - - - - - - - - - - */
 @import 'media';
+
+.text-justify {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto
+  
+}
+
+.text-center {
+  text-align: center;
+}
+
+img[alt$=">"] {
+  display: inline;
+  float:right;
+  margin-left: 1.5em;  
+  margin-top: 0.5em;    
+}
+
+img[alt$="<"] {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+  margin-top: 0.5em;  
+}
+
+img[alt$="<>"] {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
