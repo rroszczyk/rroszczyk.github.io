@@ -40,11 +40,13 @@ pip install pyinstaller
 ```
 
 natomiast użytkowicy posługujący się condą powinni wydać polecenie:
+{:.text-justify} 
 
 ```bash
 conda install pyinstaller
 ```
 Proces instalacji w&nbsp;środowisku windows dla condy powinien przebiec w&nbsp;sposób zbliżony do poniższego:
+{:.text-justify} 
 
 ![Proces instalacji !]({{site.baseurl}}/assets/img/python/pi_setup.jpg)
 
@@ -67,7 +69,9 @@ Wynikiem działania programu będzie plik wykonywalny który znaleźć będzie m
 ## Rozwiązania alternatywne
 
 Oprócz zaprezentowanego Pyinstallera użytkownicy Pythona mają do dyspozycji:
+{:.text-justify} 
 - cx_Freeze
 - py2exe
 
 Moim zdaniem najlepszym rozwiązaniem jest jednak Pyinstaller ponieważ jest najłatwiejszy w&nbsp;użyciu oraz zgodny z&nbsp;wieloma różnymi platformami dzięki czemu w&nbsp;łatwy sposób można tworzyć aplikacje wykonywalne dla różnych systemów operacyjnych.
+{:.text-justify} 

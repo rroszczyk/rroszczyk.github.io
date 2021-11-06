@@ -5,4 +5,5 @@ gem "bundler"
 gem "jekyll-sitemap"
 gem "jekyll-paginate"
 gem "jemoji"
+gem "jekyll-seo-tag"
 
