@@ -1,14 +1,20 @@
 ---
 layout: post
-#toc: true
+toc: true
 description: >
-    [GIT - przewodnik praktyczny] Konfiguracja - czyli co i jak ustawiać żeby praca z Git była wygodniejsza. Git posiada długą listę parametrów konfiguracyjnych pozwalających dostosować do swoich potrzeb środowisko pracy, a ten opis zawiera podstawowe parametry konfiguracyjne.
+    Konfiguracja - czyli co i jak ustawiać żeby praca z Git była wygodniejsza. Krótkie wprowadzenie do podstawowych parametrów konfiguracyjnych pozwalających dostosować do swoich potrzeb środowisko pracy git.
+#Git posiada długą listę parametrów konfiguracyjnych pozwalających dostosować do swoich potrzeb środowisko pracy, a ten opis zawiera podstawowe parametry konfiguracyjne.
 hide_description: true
-title: GIT&#58; Konfiguracja
+title: GIT&#58; Szybka Konfiguracja
 categories: [git] 
 tags: [git]
 languages:
 - pl
+img: git/git-unsplash.jpg
+author: rroszczyk
+comments: false
+#Photo by <a href="https://unsplash.com/@synkevych?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Roman Synkevych</a> on <a href="https://unsplash.com/s/photos/git?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+#[GIT - przewodnik praktyczny]  
 ---
 
 Git posiada długą listę parametrów konfiguracyjnych pozwalających dostosować do swoich potrzeb środowisko pracy oraz zdefiniować informacje o użytkowniku (autorze) wprowadzanych zmian. Wszystkie ustawienia można ustawić ręcznie w&nbsp;pliku _.gitconfig_ w&nbsp;katalogu domowym zalogowanego użytkownika bądź poprzez wykonanie odpowiednich komend.
@@ -29,7 +35,7 @@ git config --global user.name "Radosław Roszczyk"
 git config --global user.email "rroszczyk@users.noreply.github.com"
 ```
 
-Dodanie parametru _--global_ powoduje zapamiętanie wprowadzonych danych we wcześniej wspomnianym pliku konfiguracyjnym _.gitconfig_, dzięki czemu parametry te stają się parametrami domyślnymi dla wszystkich nowych repozytoriów. Pominięcie parametru powoduje ustawienie parametrów tylko dla lokalnego repozytorium co jest równoznaczne użyciu parametru _--local_. Lokalna konfiguracja zostaje zapisana w pliku _.git/config_ repozytorium i będzie nadrzędna w stosunku do konfiguracji globalnej.
+Dodanie parametru _--global_ powoduje zapamiętanie wprowadzonych danych we wcześniej wspomnianym pliku konfiguracyjnym _.gitconfig_, dzięki czemu parametry te stają się parametrami domyślnymi dla wszystkich nowych repozytoriów. Pominięcie parametru powoduje ustawienie parametrów tylko dla lokalnego repozytorium co jest równoznaczne użyciu parametru _--local_. Lokalna konfiguracja zostaje zapisana w pliku _.git/config_ repozytorium i będzie nadrzędna w stosunku do konfiguracji globalnej, ale działa tylko w zakresie repozytorium dla którego została zapisana.
 {:.text-justify}
 
 ## Ustawianie domyślnego edytora
@@ -72,16 +78,4 @@ Oprócz pojedynczych parametrów możemy odczytać pełną konfigurację. Do teg
 
 ```bash
 git config --global --list
-```
-
-## Tworzenie aliasów
-
-Git domyślnie nie posiada utworzonych żadnych aliasów. Poniższe polecenia powodują wygenerowanie czterech aliasów do popularnych poleceń Git'a i będą szczególnie przydatne dla użytkowników którzy wcześniej posługiwali się SVN'em:
-{:.text-justify}
-
-```bash
-git config --global alias.st status
-git config --global alias.ci commit
-git config --global alias.co checkout
-git config --global alias.br branch
 ```
