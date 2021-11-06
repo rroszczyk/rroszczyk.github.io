@@ -446,10 +446,10 @@ template {
 .highlighter-rouge {
   color: #ce887b;
   font-weight: 400;
-  border: 1px solid #607D8B;
+  border: 1px solid #adbbc4;;
   -webkit-border-radius: 3px;
           border-radius: 3px;
-  padding: 0.1rem 0.5rem;
+  border-left:4px solid #344e78;
 }
 
 .highlight .hll {
@@ -1511,3 +1511,13 @@ img[alt$="<>"] {
     height: auto;
     margin: auto;
 }
+
+img[alt$="!"] {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  margin-right: auto;
+  margin-top: auto;
+}
+
