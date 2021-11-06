@@ -11,7 +11,7 @@ languages:
 - pl
 ---
 
-Git posiada długą listę parametrów konfiguracyjnych pozwalających dostosować do swoich potrzeb środowisko pracy oraz zdefiniować informacje o użytkowniku (autorze) wprowadzanych zmian. Wszystkie ustawienia można ustawić ręcznie w pliku _.gitconfig_ w katalogu domowym zalogowanego użytkownika bądź poprzez wykonanie odpowiednich komend.
+Git posiada długą listę parametrów konfiguracyjnych pozwalających dostosować do swoich potrzeb środowisko pracy oraz zdefiniować informacje o użytkowniku (autorze) wprowadzanych zmian. Wszystkie ustawienia można ustawić ręcznie w&nbsp;pliku _.gitconfig_ w&nbsp;katalogu domowym zalogowanego użytkownika bądź poprzez wykonanie odpowiednich komend.
 {:.text-justify}
 
 <!--more-->
@@ -43,7 +43,7 @@ git config --global core.editor nano
 
 ## Modyfikacja konfiguracji
 
-Jeżeli zajdzie potrzeba zmiany dowolnego z parametrów wystarczy dokonać jego nadpisania poprzez ponowne ustawienie parametru z nową wartością. W przypadku gdy zależy nam na usunięciu któregoś z parametrów należy posłużyć się przełącznikiem _--unset_. W poniższym przykładzie usunięta zostanie nazwa użytkownika z konfiguracji lokalnego repozytorium.
+Jeżeli zajdzie potrzeba zmiany dowolnego z&nbsp;parametrów wystarczy dokonać jego nadpisania poprzez ponowne ustawienie parametru z nową wartością. W&nbsp;przypadku gdy zależy nam na usunięciu któregoś z&nbsp;parametrów należy posłużyć się przełącznikiem _--unset_. W&nbsp;poniższym przykładzie usunięta zostanie nazwa użytkownika z&nbsp;konfiguracji lokalnego repozytorium.
 {:.text-justify}
 
 ```bash
