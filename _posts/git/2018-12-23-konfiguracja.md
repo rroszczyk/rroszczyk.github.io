@@ -7,6 +7,7 @@ hide_description: true
 title: GIT&#58; Konfiguracja
 #categories: [git]
 tags: [git]
+permalink: /git/konfiguracja
 languages:
 - pl
 ---
