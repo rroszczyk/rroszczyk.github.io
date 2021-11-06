@@ -5,9 +5,8 @@ description: >
     [GIT - przewodnik praktyczny] Konfiguracja - czyli co i jak ustawiać żeby praca z Git była wygodniejsza. Git posiada długą listę parametrów konfiguracyjnych pozwalających dostosować do swoich potrzeb środowisko pracy, a ten opis zawiera podstawowe parametry konfiguracyjne.
 hide_description: true
 title: GIT&#58; Konfiguracja
-#categories: [git]
+categories: [git] 
 tags: [git]
-permalink: /git/konfiguracja
 languages:
 - pl
 ---
