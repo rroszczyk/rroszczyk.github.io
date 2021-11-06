@@ -2,7 +2,7 @@
 layout: post
 toc: true
 description: >
-    Konfiguracja - czyli co i jak ustawiać żeby praca z Git była wygodniejsza. Krótkie wprowadzenie do podstawowych parametrów konfiguracyjnych pozwalających dostosować do swoich potrzeb środowisko pracy git.
+    Konfiguracja - czyli co i jak ustawiać żeby praca z Git była wygodniejsza. Krótkie wprowadzenie do podstawowych parametrów konfiguracyjnych.
 #Git posiada długą listę parametrów konfiguracyjnych pozwalających dostosować do swoich potrzeb środowisko pracy, a ten opis zawiera podstawowe parametry konfiguracyjne.
 hide_description: true
 title: GIT&#58; Szybka Konfiguracja

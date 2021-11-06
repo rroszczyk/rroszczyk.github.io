@@ -1,8 +1,8 @@
 ---
 layout: post
 toc: true
-description: >
-    Programy pisane w języku C czy C++ zwyczajowo są kompilowane do postaci plików wykonywalnych. W tym artykule przedstawiona została metoda budowy plików wykonywalnych ze skryptów w języku Python. 
+description: >    
+    Zwyczajowo tworzone programy są kompilowane do postaci plików wykonywalnych. W tym wpisie przedstawiony został sposób tworzenia plików wykonywalnych dla języka Python...
 hide_description: true
 title: Python&#58; Tworzenie Plików Wykonywalnych
 categories: [python] 
