@@ -50,3 +50,10 @@ collections:
   featured_tags:
     permalink:         /tags/:name/
     output:            true  
+
+compress_html:
+  comments:            ["<!-- ", " -->"]
+  clippings:           all
+  endings:             all
+  ignore:
+    envs:              [development]    
