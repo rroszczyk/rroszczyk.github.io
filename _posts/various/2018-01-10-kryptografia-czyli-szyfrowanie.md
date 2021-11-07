@@ -6,6 +6,7 @@ categories: [kryptografia]
 accent_image: /assets/img/key-bg.jpg
 image: /assets/img/kryptografia/enigma_1600x600.jpg
 img: kryptografia/enigma_1600x600.jpg
+ximg: tmb/enigma_x.jpg
 hide_image: true
 author: rroszczyk
 tags: [kryptografia, różne]

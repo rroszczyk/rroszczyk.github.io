@@ -7,6 +7,7 @@ description: >
 #accent_image: /assets/img/cover/warsztat-bg.jpg
 #image: /assets/img/cover/warsztat-bg.jpg
 img: cover/warsztat.jpg
+ximg: tmb/warsztat_x.jpg
 copyrights: cover image Photo by Philip Swinburn on Unsplash
 #hide_image: true
 author: rroszczyk
