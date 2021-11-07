@@ -10,7 +10,7 @@ categories: [git]
 tags: [git]
 languages:
 - pl
-img: git/git-unsplash.jpg
+img: cover/git-unsplash.jpg
 ximg: tmb/git-unsplash_x.jpg
 author: rroszczyk
 comments: false

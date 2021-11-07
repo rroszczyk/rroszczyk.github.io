@@ -9,7 +9,7 @@ categories: [python]
 tags: [python]
 languages:
 - pl
-img: python/build-unsplash.jpg
+img: cover/build-unsplash.jpg
 ximg: tmb/build-unsplash_x.jpg
 author: rroszczyk
 comments: false
@@ -49,7 +49,7 @@ conda install pyinstaller
 Proces instalacji w&nbsp;środowisku windows dla condy powinien przebiec w&nbsp;sposób zbliżony do poniższego:
 {:.text-justify} 
 
-![Proces instalacji !]({{site.baseurl}}/assets/img/python/pi_setup.jpg)
+![Proces instalacji !]({{site.baseurl}}/img/python/pi_setup.jpg)
 
 ## Budowa pliku wykonywalnego
 
@@ -62,7 +62,7 @@ pyinstaller --onefile hello.py
 Dla środowiska windows proces budowy będzie przebiegał w&nbsp;sposób zbliżony do poniższego:
 {:.text-justify} 
 
-![Proces budowy aplikacji !]({{site.baseurl}}/assets/img/python/pi_build.jpg)
+![Proces budowy aplikacji !]({{site.baseurl}}/img/python/pi_build.jpg)
 
 Wynikiem działania programu będzie plik wykonywalny który znaleźć będzie można w&nbsp;katalogu _dist_ który to zostanie utworzony w&nbsp;miejscu gdzie był budowany pakiet wykonywalny. Plik wykonywalny aplikacji będzie dosyć pokaźnego rozmiaru co jest związane z&nbsp;koniecznością opakowania skryptu w&nbsp;języku Python środowiskiem uruchomieniowym.
 {:.text-justify} 
