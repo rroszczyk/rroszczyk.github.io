@@ -2,11 +2,11 @@
 layout: post
 toc: true
 description: >    
-    Zwyczajowo tworzone programy są kompilowane do postaci plików wykonywalnych. W tym wpisie przedstawiony został sposób tworzenia plików wykonywalnych dla języka Python...
+    Zwyczajowo tworzone programy są kompilowane do postaci plików wykonywalnych. W tym wpisie przedstawiony został sposób tworzenia plików wykonywalnych dla języka Python.
 hide_description: true
 title: Python&#58; Tworzenie Plików Wykonywalnych
 categories: [python] 
-tags: [python]
+tags: [python praktycznie, python]
 languages:
 - pl
 img: cover/build-unsplash.jpg
@@ -51,9 +51,9 @@ Proces instalacji w&nbsp;środowisku windows dla condy powinien przebiec w&nbsp;
 
 ![Proces instalacji !]({{site.baseurl}}/img/python/pi_setup.jpg)
 
-## Budowa pliku wykonywalnego
+## Budowanie pliku wykonywalnego
 
-Budowa pliku wykonywalnego jest równie prosta jak proces instalacji. Wystarczy wydać polecenie _pyinstaller_ w&nbsp;linii poleceń i&nbsp;rozpocznie się budowa pakietu wykonywalnego. Włączenie dodatkowej flagi _--onefile_ powoduje wygenerowanie pojedynczego pliku wykonywalnego zawierającego wszystkie zależności wymagane do uruchomienia budowanej aplikacji. Bez włączenia tej opcji z&nbsp;wygenerowaną aplikacją będzie trzeba dostarczać wszystkich wymaganych bibliotek uruchomieniowych. Przykład rozpoczęcia budowy aplikacji zamieszczony został na listingu:
+Budowanie pliku wykonywalnego jest równie prosta jak proces instalacji. Wystarczy wydać polecenie _pyinstaller_ w&nbsp;linii poleceń i&nbsp;rozpocznie się budowa pakietu wykonywalnego. Włączenie dodatkowej flagi _--onefile_ powoduje wygenerowanie pojedynczego pliku wykonywalnego zawierającego wszystkie zależności wymagane do uruchomienia budowanej aplikacji. Bez włączenia tej opcji z&nbsp;wygenerowaną aplikacją będzie trzeba dostarczać wszystkich wymaganych bibliotek uruchomieniowych. Przykład rozpoczęcia budowy aplikacji zamieszczony został na listingu:
 {:.text-justify} 
 
 ```bash
