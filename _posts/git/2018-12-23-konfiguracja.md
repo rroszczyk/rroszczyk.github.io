@@ -47,6 +47,13 @@ Domyślnym edytorem dla Git'a jest VIM. Do zmiany edytora ponownie posłużymy s
 ```bash
 git config --global core.editor nano
 ```
+## Włączanie trybu kolorowego na konsoli
+W przypadku gdy często korzystamy z konsolowego trybu pracy gita warto włączyć dodatkowy tryb kolorowania wyników działania. Opcją konfiguracyjną włączającą ten parametr jest _color.ui_. Poniższy przykład włącza kolorowanie wyników na konsoli:
+{:.text-justify}
+
+```bash
+git config --global color.ui auto
+```
 
 ## Modyfikacja konfiguracji
 
