@@ -1,6 +1,8 @@
 ---
 layout: main
 title: Tags
+description: > 
+    Co, gdzie, jak - informacje o tym w którym poście należy szukać określonych informacji.
 permalink: /tags/
 ---
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}

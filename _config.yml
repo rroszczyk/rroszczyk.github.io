@@ -34,6 +34,7 @@ plugins:
   - jekyll-paginate
   - jemoji
   - jekyll-seo-tag
+  - jekyll-gzip
 
 paginate: 8
 paginate_path: "/page/:num"
@@ -57,4 +58,11 @@ compress_html:
   clippings:           all
   endings:             all
   ignore:
-    envs:              [development]    
+    envs:              [development]
+   
+
+gzip:
+  extensions:
+    - '.html'
+    - '.css'
+    - '.js'      

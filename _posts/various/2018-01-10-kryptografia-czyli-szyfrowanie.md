@@ -11,6 +11,8 @@ hide_image: true
 author: rroszczyk
 tags: [kryptografia, różne]
 comments: false
+description: >
+    Kryptografia czyli sztuka pisania szyfrem, zrozumiałym tylko dla wtajemniczonych. W niniejszym tekście znajdziesz krótkie wprowadzenie do współczesnych metod kryptograficznych używanych w systemach informatycznych.
 ---
 ![Kryptografia: Logo <](/img/kryptografia/kryptografia_logo.png)Kryptografia czyli sztuka pisania szyfrem, zrozumiałym tylko dla wtajemniczonych - jest rozwijana od zarania dziejów. Już w starożytności dysponowano systemami przekazywania informacji, uniemożliwiającymi przeczytanie osobom niepowołanym pewnych treści.
 Z upływem czasu potrzeba utajniania informacji wzrosła. Jeszcze kilka lat temu nie odczuwaliśmy zagrożeń, wynikających z utraty bądź niewłaściwego wykorzystania informacji. Obecnie bez szyfrowania nie byłoby możliwe działanie większości systemów informatycznych. Rozwój sieci komputerowych, zmniejszające się bariery w komunikacji między ludźmi rodzą potrzebę zabezpieczania naszych danych przed nieautoryzowanym dostępem. Dodatkowo pojawia się potrzeba zapewnienia integralności przekazywanych informacji oraz ich autoryzacji. Dużą rolę zaczynają odgrywać elektroniczne podpisy wiadomości oraz treści Internetowych.
