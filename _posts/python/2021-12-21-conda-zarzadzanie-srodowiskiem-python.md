@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Python&#58; Zarządzanie Pakietami
 internal-title: Zarządzanie pakietami oraz środowiskiem dla języka Python
 description: >
@@ -59,9 +59,22 @@ Niezależnie od tego którą wersję instalacyjną wybierzemy to instalator najp
 Obok środowiska głównego można utworzyć dowolną liczbę dodatkowych środowisk. Chodzi o&nbsp;to, że te dodatkowe środowiska mogą zawierać różne wersje Pythona oraz innych pakietów. 
 {:.text-justify}
 
+
 ### Struktura katalogów
 Conda instaluje się w jednym katalogu. Wewnątrz tego katalogu znajduje się środowisko **root**{:.maroon} oraz katalogi systemu Conda. Z&nbsp;naszego punktu widzenia istotny jest katalog **pkgs**{:.maroon} zawierający zbuforowane pakiety w&nbsp;skompresowanych i&nbsp;nieskompresowanych formatach oraz katalog **envs**{:.maroon} zawierający utworzone i&nbsp;skonfigurowane środowiska.
 {:.text-justify}
+
+### Funkcje podstawowe
+Do sprawdzenie parametrów aktualnie zainstalowanego środowiska conda należy użyć polecenia:
+{:.text-justify}
+```bash
+conda info
+```
+Informacje zwracane przez to polecenie dotyczą środowiska bazowego root za wyjątkiem nazwy aktywnego środowiska oraz lokalizacji plików aktywnego środowiska. W celu aktualizacji condy oraz środowiska bazowego należy użyć polecenia:
+{:.text-justify}
+```bash
+conda update conda
+```
 
 ### Tworzenie nowego środowiska
 Aby utworzyć nowe środowisko o&nbsp;nazwie, na przykład srodowisko_testowe (możesz je nazwać jak chcesz ale pamiętaj, że w&nbsp;nazwach nie można używać znaków specjalnych /, :, # oraz spacji), uruchom:
@@ -86,3 +99,47 @@ Katalogi z&nbsp;plikami wykonywalnymi aktywnego środowiska są dodawane do ści
 ```bash
 conda deactivate
 ```
+
+### Listowanie dostępnych środowisk
+Do wyświetlenia listy dostępnych środowisk należy użyć polecenia:
+{:.text-justify}
+```bash
+conda env list
+```
+Natomiast do sprawdzenia wersji zainstalowanych pakietów w&nbsp;aktywnym środowisku służy polecenie:
+{:.text-justify}
+```bash
+conda list
+```
+
+### Usuwanie środowiska
+Jeżeli uznamy, że dane środowisko nie będzie nam już potrzebne możemy je usunąć. Usunięcie środowiska zwalnia zasoby dyskowe zajmowane przez wszystkie pakiety danego środowiska. Usunięcie środowiska realizuje polecenie:
+{:.text-justify}
+```bash
+conda env remove --name srodowisko_do_usuniecia
+```
+Nie można usunąć środowiska bieżącego, dlatego operacje na środowiskach warto przeprowadzać zawsze z poziomu środowiska bazowego root. Nie ma również możliwości usunięcia środowiska root. To środowisko zostanie skasowane podczas deinstalacji condy.
+{:.text-justify}
+
+
+## Zestawienie najczęściej używanych komend condy
+Na sam koniec zestawienie kilku najczęściej używanych komend condy.
+
+| Operacja | Polecenie | 
+|-|-|
+| Sprawdzenie wersji zainstalowanej condy | conda info |
+| Aktualizacja condy do najnowszej wersji | conda update conda |
+| Utworzenie nowego środowiska dla pythona w wersji 3.10 | conda create --name nazwa_srodowiska python=3.10 |
+| Aktywacja środowiska | conda activate nazwa_srodowiska |
+| Wyświetlenie listy dostępnych środowisk | conda env list |
+| Utworzenie kopii środowiska pod inną nazwą | conda create --clone nazwa_srodowiska --name nowe_srodowisko |
+| Wyświetlenie pakietów dostępnych w aktywnym środowisku | conda list |
+| Zapisanie informacji o środowisku do pliku | conda list --explicit > nazwa_srodowiska.txt |
+| Usunięcie środowiska | conda env remove --name nazwa_srodowiska_do_usuniecia |
+| Odtworzenie środowiska z pliku | conda env create --file nazwa_srodowiska.txt |
+| Wyszukanie pakietu | conda search nazwa_pakietu |
+| Instalacja pakietu w aktywnym środowisku | conda install nazwa_pakietu |
+| Usunięcie pakietu z aktywnego środowiska | conda remove nazwa_pakietu
+{:.table-center}
+<a name="table_1" />**Tabela 1:** Najczęściej używane komendy condy
+{:.caption-center}
