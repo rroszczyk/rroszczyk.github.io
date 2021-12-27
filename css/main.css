@@ -775,7 +775,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   color: #515151;
-  background-color: #fbfbfb;
+  background-color: #f0f0f0;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -960,7 +960,7 @@ table tfoot td {
 }
 
 .post, .article-page {
-  background-color: #fff;
+  background-color: #fafafa;
 }
 
 ::-moz-selection {
@@ -1004,7 +1004,7 @@ table tfoot td {
   width: 240px;
   height: 100%;
   padding: 20px 10px;
-  background-color: #ffffff;
+  background-color: #f8f8f8;
 }
 
 .about {
@@ -1295,8 +1295,8 @@ a.newer-posts:hover {
 }
 
 .header-page .page-date {
-  color: #a0a0a0;
-  font-weight: 300;
+  color: #707070;
+  font-weight: 400;
   font-size: 12px;
   text-transform: uppercase;
 }
