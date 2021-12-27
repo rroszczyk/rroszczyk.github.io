@@ -1,7 +1,8 @@
 ---
 layout: main
 ---
-{% for post in paginator.posts %}
+<h1>Więcej tekstów związanych z praktycznym wykorzystaniem przydatnych narzędzi</h1>
+{% for post in site.categories[page.slug] %}
 <article class="post">
   {% if post.ximg %}
     <a class="post-thumbnail" style="background-image: url({{"/img/" | prepend: site.baseurl | append : post.ximg}})" href="{{post.url | prepend: site.baseurl}}"></a>

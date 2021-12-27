@@ -6,7 +6,8 @@ description: >
 hide_description: true
 title: Python&#58; Tworzenie Plików Wykonywalnych
 categories: [python] 
-tags: [python praktycznie, python]
+tags: [python, pliki wykonywalne]
+series: [python praktycznie]
 languages:
 - pl
 img: cover/build-unsplash.jpg
@@ -18,7 +19,7 @@ comments: false
 ---
 
 Programy pisane w&nbsp;języku C&nbsp;czy C++&nbsp;zwyczajowo są kompilowane do postaci plików wykonywalnych. Niekiedy takowa funkcjonalność jest również potrzebna programistom piszącym w&nbsp;języku Python. Aby sprostać ich wymaganiom powstało wiele różnych narzędzi pozwalających budować pliki wykonywalne składające się z&nbsp;całego środowiska wykonywalnego dla Pythona oraz skryptów do uruchomienia. Jednym z&nbsp;takich programów jest Pyinstaller.
-{:.text-justify} 
+{:.text-justify-has-drop-cap}
 
 PyInstaller zamraża (pakuje) aplikacje Pythona w&nbsp;samodzielne pliki wykonywalne dla środowiska Windows, GNU/Linux, Mac&nbsp;OS&nbsp;X, Solaris oraz FreeBSD. Głównymi zaletami Pyinstallera w&nbsp;porównaniu z&nbsp;podobnymi narzędziami tego typu są: 
 {:.text-justify} 

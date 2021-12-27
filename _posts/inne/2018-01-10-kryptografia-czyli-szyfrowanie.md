@@ -2,14 +2,14 @@
 layout: post
 title: Kryptografia czyli sztuka pisania szyfrem
 #tags: [kryptografia, DES, IDEA, LOTW, PGP, RSA, SSH, SSL]
-categories: [kryptografia]
+categories: [inne]
 accent_image: /assets/img/key-bg.jpg
 image: /img/kryptografia/enigma_1600x600.jpg
 img: cover/enigma_1600x600.jpg
 ximg: tmb/enigma_x.jpg
 hide_image: true
 author: rroszczyk
-tags: [kryptografia, różne]
+tags: [kryptografia]
 comments: false
 description: >
     Kryptografia czyli sztuka pisania szyfrem, zrozumiałym tylko dla wtajemniczonych. W niniejszym tekście znajdziesz krótkie wprowadzenie do współczesnych metod kryptograficznych używanych w systemach informatycznych.

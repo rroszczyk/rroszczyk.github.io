@@ -1013,13 +1013,14 @@ table tfoot td {
 }
 
 .about .cover-author-image {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto 10px;
   -webkit-border-radius: 100%;
           border-radius: 100%;
   overflow: hidden;
-  background-color: #333030;
+  background-color: #f8f8f8;
+  /* background-color: #333030;   */
 }
 
 .about img {
@@ -1035,19 +1036,19 @@ table tfoot td {
 }
 
 .about img:hover {
-  -webkit-transform: scale3d(0.9, 0.9, 1);
-          transform: scale3d(0.9, 0.9, 1);
+  -webkit-transform: scale3d(1.1, 1.1, 1);
+          transform: scale3d(1.1, 1.1, 1);
 }
 
 .about .author-name {
-  font-family: 'PT Serif', serif;
+  /* font-family: 'PT Serif', serif; */
+  font-family: "Lato", Helvetica, Arial, sans-serif;
   margin: 0 0 10px;
   position: relative;
   padding-bottom: 15px;
-  font-size: 16px;
-  text-transform: uppercase;
+  font-size: 25px;
   color: #333030;
-  font-weight: 700;
+  font-weight: 400; 
 }
 
 /*.about .author-name::after {
@@ -1625,9 +1626,22 @@ ul.without-bullet-justify, ul.without-bullet-justify li {
   -webkit-hyphens: auto  
 }
 
-.text-justify, .text-justify li {
+.text-justify, .text-justify-has-drop-cap, .text-justify li {
   text-align: justify;
   hyphens: auto;
-  -webkit-hyphens: auto
- 
+  -webkit-hyphens: auto 
+}
+
+.text-justify strong.maroon, .text-justify-has-drop-cap strong.maroon {
+  color: maroon;
+}
+
+.text-justify-has-drop-cap:not(:focus):first-letter {
+  float: left;
+  font-size: 5.4em;
+  line-height: .68;
+  font-weight: 100;
+  margin: .05em .1em 0 0;
+  text-transform: uppercase;
+  font-style: normal; 
 }

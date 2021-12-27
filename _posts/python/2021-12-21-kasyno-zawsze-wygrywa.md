@@ -1,9 +1,10 @@
 ---
 layout: post
-title: Jak zbudować super szybki blog?
+published: false
+title: Kasyno zawsze wygrywa
 categories: [warsztat]
 description: >
-    Przyczyną pojawienia się tego wpisu były wielkie porządki, a przy okazji migracja zawartości niniejszego bloga na nową platformę.    
+    Zastosowanie algorytmu Monte Carlo oraz Las Vegas
 #accent_image: /assets/img/cover/warsztat-bg.jpg
 #image: /assets/img/cover/warsztat-bg.jpg
 img: cover/warsztat.jpg
@@ -16,8 +17,13 @@ tags: [warsztat]
 summary: 
 ---
 
-Przyczyną pojawienia się tego wpisu były wielkie porządki. Przy okazji zawartości niniejszego bloga została przeniesiona na nową platformę oraz do nowego miejsca hostingowego. Usunięta została nieaktualna treść (w sumie to większość zawartości), kilka wpisów zostało mocno zmodyfikowanych, a całkiem sporo niestety czeka jeszcze na aktualizację. Zmiany te spowodowały, że blog stał się znacząco lżejszy i szybszy oraz zyskał nowy motyw. Motyw ten jest tylko tymczasowy, ale jak na razie spełnia swoją rolę.
+Metoda Monte Carlo jest liczbową metodą rozwiązywania problemów matematycznych przy wykorzystaniu modelowania zmiennych losowych. Algorytmy wykorzystujące tę metodę czasami noszą nazwę <span style="color:maroon">metody prób statystycznych</span>. Wiele dzisiejszych programów komputerowych potrafi wysyłać wiadomości do użytkowników. Z punktu widzenia programu sprawa prosta, wyślij i działa. Nieco inaczej sprawa wygląda z punktu widzenia programisty. Wysyłka maila zazwyczaj wiąże się wykorzystaniem mniej bądź bardziej zaawansowanych metoda, ale praktycznie zawsze potrzebujemy sprawdzić czy wszystko się udało. W niniejszym tekście przedstawione zostały narzędzia pozwalające na szybkie uruchomienie fałszywego serwera pocztowego dzięki czemu możliwe jest nie tylko wysyłanie wiadomości testowych ale i ich analiza, sprawdzenie sesji i tego co i jak się dzieje w trakcie samej wysyłki.
 {:.text-justify-has-drop-cap}
+
+Wiele dzisiejszych programów komputerowych potrafi wysyłać wiadomości do użytkowników. Z punktu widzenia programu sprawa prosta, wyślij i działa. Nieco inaczej sprawa wygląda z punktu widzenia programisty. Wysyłka maila zazwyczaj wiąże się wykorzystaniem mniej bądź bardziej zaawansowanych metoda, ale praktycznie zawsze potrzebujemy sprawdzić czy wszystko się udało. W niniejszym tekście przedstawione zostały narzędzia pozwalające na szybkie uruchomienie fałszywego serwera pocztowego dzięki czemu możliwe jest nie tylko wysyłanie wiadomości testowych ale i ich analiza, sprawdzenie sesji i tego co i jak się dzieje w trakcie samej wysyłki.
+
+Przyczyną pojawienia się tego wpisu były wielkie porządki. Przy okazji zawartości niniejszego bloga została przeniesiona na nową platformę oraz do nowego miejsca hostingowego. Usunięta została nieaktualna treść (w sumie to większość zawartości), kilka wpisów zostało mocno zmodyfikowanych, a całkiem sporo niestety czeka jeszcze na aktualizację. Zmiany te spowodowały, że blog stał się znacząco lżejszy i szybszy oraz zyskał nowy motyw. Motyw ten jest tylko tymczasowy, ale jak na razie spełnia swoją rolę.
+{:.text-justify}
 
 Swoją pierwszą osobistą stronę stworzyłem bardzo dawno temu przy użyciu czystego html, następnie zacząłem używać strong Google, a ostatnio Wodrpress'a. Jednak cały czas to nie było to czego potrzebowałem dlatego zacząłem szykować się do kolejnej zmiany. Niektórzy pomyślą sobie zaraz, zaraz, WordPress był nieodpowiedni? No właśnie wszystko zależy od punktu widzenia i aktualnych potrzeb. Nie mogę powiedzieć, że WordPress jest zły. Tym co mi nie odpowiadało jest jego budowa i skomplikowane działanie.Wymaga hostingu z obsługą php oraz serwera bazy danych. Przeniesienie na inny hosting jest bardzo skomplikowane. Ponadto przez cały czas trzeba dbać o jego bezpieczeństwo, aktualizować, dobierać wtyczki. Krótko mówiąc mnóstwo zachodu i ciągłe utrzymywanie hydrauliki... Co prawda mogłem wrócić do Google, ale to znowu wymaga wykorzystywania ich infrastruktury i powoduje przywiązanie do ich firmy.
 {:.text-justify}
@@ -33,18 +39,19 @@ Wiadomo już że używane są statyczne strony - to teraz będzie trochę o kuch
 Jeśli chcesz powielić moje rozwiązanie to recepta jest dosyć prosta. Najpierw należy zainstalować [Ruby] oraz [Jekyll]. W kolejnym kroku generujemy czysty szablon strony:
 {:.text-justify}
 
-```bash
-jekyll new nazwa_strony
+```python
+import random
+import matplotlib.pyplot as plt
 ```
 
 Powyższa komenda wygeneruje całą strukturę niezbędnych katalogów oraz inne rzeczy potrzebne do budowy naszej strony. Nowe posty umieszczamy w katalogu _posts natomiast konfigurację bloga znajdziemy w pliku _config.yml. Jeśli chcemy aby nasza strona miała swój indywidualny wygląd należy stworzyć dla niej odpowiedni motyw bądź skorzystać z gotowego dostosowując go do swoich potrzeb. Całkiem bogatą kolekcję motywów można znaleźć na stronie [Jekyll Themes]. Przed umieszczeniem strony w sieci warto sprawdzić czy wszystko prawidłowo działa. Do tego celu wystarczy poniższa komenda i nasza strona będzie widoczna lokalnie pod adresem: http://127.0.0.1:4000/.
 {:.text-justify}
 
 ```bash
-bundle exec jekyll serve --livereload
+bundle exec jekyll serve
 ```
 
-Po uruchomieniu lokalnej wersji strony przeglądarka będzie na bieżąco wyświetlać zmiany jakie są wprowadzane w kodzie naszej strony. Natomiast w katalogu zawierającym strukturę plików witryny można znaleźć podkatalog _site zawierający wygenerowaną statyczna stronę. Teraz wystarczy przegrać jego zawartość na serwer i strona będzie widoczna publicznie.
+Po uruchomieniu lokalnej wersji strony w katalogu ze stroną można znaleźć podkatalog _site zawierający wygenerowaną statyczna stronę. Teraz wystarczy przegrać jego zawartość na serwer i strona będzie widoczna publicznie.
 {:.text-justify}
 
 To gdzie w końcu umieścić stronę? Tak jak pisałem wcześniej [Jekyll] pozwala na umieszczenie strony praktycznie wszędzie. Strony statyczne mają to do siebie, że nie potrzeba praktycznie niczego specjalnego do ich serwowania. Nie jest istotna wersja php, skryptów, etc. To rozwiązanie ma szereg zalet, strona jest bardzo szybka oraz bezpieczna. Dużo trudniej uszkodzić tego typu serwis niż serwis oparty o wordpress'a czy druppal'a. Ja osobiście polecam umieszczenie strony na github.com - jest to wystarczająco dobre rozwiązanie w większości przypadków, tym bardziej, że GitHub zapewnia mechanizm pozwalający na codzienne generowanie nowej wersji strony.
@@ -60,3 +67,8 @@ Dla użytkowników nieco bardziej zaawansowanych dostępnych jest wielu dostawc�
 [Ruby]: https://www.ruby-lang.org/en/  "Ruby"
 [Jekyll Themes]: http://jekyllthemes.org/ "JekyllThemes"
 [zestawem wtyczek]: ../moje-ulubione-dodatki-do-visual-studio-code/ "Moje ulubione dodatki do Visual Studio Code"
+
+[MailCatcher]: https://mailcatcher.me/ "MailCatcher"
+[smtp4dev]: https://github.com/rnwood/smtp4dev "smtp4dev"
+[Papercut SMTP]: https://github.com/ChangemakerStudios/Papercut-SMTP "Papercut SMTP"
+[Mailtrap]: https://mailtrap.io/ "mailtrap"

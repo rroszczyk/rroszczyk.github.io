@@ -2,7 +2,7 @@ lang: pl_PL
 title: Radosław Roszczyk
 description: > # this means to ignore newlines until "baseurl:"
   To jest mój osobisty blog, służący wyrażaniu moich prywatnych opinii na różne tematy. Jest to również mój osobisty dziennik w&nbsp;którym dzielę się swoimi przemyśleniami oraz pomysłami dotyczącymi różnych spraw.
-permalink: ':title/'
+#permalink: ':title/'
 site:
   baseurl: "/" # the subpath of your site, e.g. /blog
   url: "https://rroszczyk.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
@@ -10,13 +10,13 @@ site:
 site-twitter: #if your site has a twitter account, enter it here
 
 # Author Settings
-author: Radoslaw Roszczyk # add your name
+author: Radosław Roszczyk # add your name
 author-img: radoslaw_roszczyk_192.jpg # add your photo
 #about-author: I am a software developer, researcher, and academic. Always hungry to keep learning. # add description
 #about-author: Thoughts, stories and ideas. Przemyślenia, historie oraz nowe koncepcje.
 about-author: notatki, materiały, oraz inne przydatne rzeczy
 social-twitter: rroszczyk # add your Twitter handle
-social-facebook: rroszczy # add your Facebook handle
+#social-facebook: rroszczy # add your Facebook handle
 social-github: rroszczyk # add your Github handle
 social-linkedin: rroszczyk # add your Linkedin handle
 #social-email: # add your Email address
@@ -35,7 +35,8 @@ plugins:
   - jemoji
   - jekyll-seo-tag
   - jekyll-gzip
-  - jekyll-katex  
+  - jekyll-katex
+  - jekyll-scholar
 
 paginate: 8
 paginate_path: "/page/:num"
@@ -54,6 +55,11 @@ collections:
     permalink:         /tags/:name/
     output:            true  
 
+  featured_categories:
+    permalink:         /:name/
+    output:            true
+
+
 compress_html:
   comments:            ["<!-- ", " -->"]
   clippings:           all
@@ -71,9 +77,36 @@ gzip:
 kramdown:
   math_engine:         katex
   math_engine_opts:    {}
+  syntax_highlighter: rouge
+#  syntax_highlighter_opts:  
+#    block:
+#      line_numbers: true
 
 katex:
   rendering_options:
     # Default KaTeX rendering options. See https://github.com/Khan/KaTeX#rendering-options
     throw_error: true                       # throwOnError - set to false if you want rendering to output error as text rather than a build error
     error_color: "#cc0000"                  # errorColor  
+
+scholar:
+  style: modern-language-association    
+
+
+defaults:
+  # `jekyll-seo-tag` will mark collection outputs as `BlogPosting`,
+  # but we want them to be `WebPage`s:
+  - scope:
+      type:            projects
+    values:
+      seo:
+        type:          WebPage
+  - scope:
+      type:            featured_categories
+    values:
+      seo:
+        type:          WebPage
+  - scope:
+      type:            featured_tags
+    values:
+      seo:
+        type:          WebPage

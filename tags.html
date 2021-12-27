@@ -9,7 +9,8 @@ permalink: /tags/
 {% assign tag_words = site_tags | split:',' | sort %}
 
 <section class="blog-tags">
-  <h1>Tags in Blog</h1>
+  <h1>Co, gdzie, jak</h1>
+  <h3 align=center>czyli informacje o tym który post powiązany jest z określonym hasłem</h3>
   <ul class="tags">
 <!--  cycles through tag list and creates header row of all tags used in site with accompanying per-tag counts...-->
   {% for this_word in tag_words %}
@@ -22,8 +23,12 @@ permalink: /tags/
 <!--  lists all posts corresponding to specific tag...-->
     {% for post in site.tags[this_word] %}{% if post.title != null %}
     <div class="tag-list">
-        <span><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></span>
-        <small><span>| {{ post.date | date_to_string }}</span></small>
+        <span>— <a href="{{ site.baseurl }}{{ post.url }}">
+        {% if post.internal-title %}        
+        {{post.internal-title}}        
+        {% else %}
+        {{ post.title }}
+        {% endif %} </a></span>
     </div>
     {% endif %}{% endfor %}
   {% endfor %}

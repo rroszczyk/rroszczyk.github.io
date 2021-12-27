@@ -16,8 +16,31 @@ layout: main
     {% endif %}
     <div class="wrap-content">
       <header class="header-page">
+        {% if page.internal-title %}        
+        <h1 class="page-title">{{page.internal-title}}</h1>
+        {% else %}
         <h1 class="page-title">{{page.title}}</h1>
-        <div class="page-date"><span>{{page.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        {% endif %}        
+        <!-- <div class="page-date"><span>{{page.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;&nbsp;</span></div> -->
+        <div class="page-date"><span>
+          {% assign m = page.date | date: "%-m" %}
+          {{ page.date | date: "%-d" }}
+          {% case m %}
+            {% when '1' %}Styczeń
+            {% when '2' %}Luty
+            {% when '3' %}Marzec
+            {% when '4' %}Kwiecień
+            {% when '5' %}Maj
+            {% when '6' %}Czerwiec
+            {% when '7' %}Lipiec
+            {% when '8' %}Sierpień
+            {% when '9' %}Wrzesień
+            {% when '10' %}Październik
+            {% when '11' %}Listopad
+            {% when '12' %}Grudzień
+          {% endcase %}
+          {{ page.date | date: "%Y" }}           
+        </span></div>        
       </header>
       {{content | markdownify}}
       <div class="page-footer">
@@ -27,8 +50,19 @@ layout: main
           <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}" title="Udostępnij na LinkedIn" rel="nofollow" target="_blank">LinkedIn</a>
         </div>
         <div class="page-tag">
+          {% for cat in page.categories %}
+            {% assign cat_slug = cat | slugify: "raw" %}
+            <a href="{{site.baseurl}}/{{cat_slug}}" class="tag">&#35; {{cat}}</a>
+          {% endfor %}
           {% for tag in page.tags %}
+            {% for cat in page.categories %}
+              {% assign cat_slug = cat | slugify: "raw" %}          
+            {% endfor %}            
+            {% assign tag_slug = tag | slugify: "raw" %}
+            <!-- <a href="{{site.baseurl}}/tags/{{tag_slug}}" class="tag">&#35; {{tag}}</a> -->
+            {% if cat_slug != tag_slug%}                    
             <a href="{{site.baseurl}}/tags#{{tag}}" class="tag">&#35; {{ tag }}</a>
+            {% endif %}        
           {% endfor %}
         </div>
       </div>

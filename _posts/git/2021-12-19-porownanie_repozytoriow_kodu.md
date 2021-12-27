@@ -1,5 +1,6 @@
 ---
 layout: post
+published: false
 toc: true
 description: >
     GitHub, GitLab czy BitBucket. Co wybrać aby łatwiej nam było pracować w zespole?

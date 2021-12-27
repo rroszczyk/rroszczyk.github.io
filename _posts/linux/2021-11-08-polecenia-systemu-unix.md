@@ -1,13 +1,16 @@
 ---
 layout: post
+published: true
 toc: true
 description: >
     Podstawowe polecenia powłoki bash, które każdy użytkownik terminala powinien znać aby szybko i sprawnie poradzić sobie z podstawowymi operacjami na plikach i katalogach.
 #    Zwiększ swoją produktywność dzięki uniksowym poleceniom powłoki bash, czyli podstawowe polecenia terminala które każdy powinien znać.
 hide_description: true
-title: Podstawowe Polecenia Terminala Unix
+title: Podstawowe Polecenia Systemu Unix
+internal-title: Podstawowe polecenia powłoki systemu Unix
 categories: [linux] 
-tags: [linux praktycznie, linux, bash, shell]
+tags: [linux, bash, shell]
+series: [linux praktycznie] 
 languages:
 - pl
 img: cover/keyboard.jpg

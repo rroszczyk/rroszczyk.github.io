@@ -1,5 +1,6 @@
 ---
 layout: post
+published: false
 toc: true
 description: >    
     Zwyczajowo tworzone programy są kompilowane do postaci plików wykonywalnych. W tym wpisie przedstawiony został sposób tworzenia plików wykonywalnych dla języka Python.
