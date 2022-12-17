@@ -88,3 +88,7 @@ Oprócz pojedynczych parametrów możemy odczytać pełną konfigurację. Do teg
 ```bash
 git config --global --list
 ```
+
+Dodane na potrzeby prezentacji:
+- pierwszy podpunkt
+- drugi punkt
