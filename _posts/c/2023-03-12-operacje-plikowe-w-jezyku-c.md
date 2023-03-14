@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Operacje plikowe w języku C
+title: C&#58; Operacje Plikowe 
 #tags: [kryptografia, DES, IDEA, LOTW, PGP, RSA, SSH, SSL]
 categories: [programowanie]
 accent_image: /assets/img/key-bg.jpg
@@ -9,39 +9,39 @@ img: cover/files.png
 ximg: tmb/files.jpg
 hide_image: true
 author: rroszczyk
-tags: [c]
+tags: [c,pliki]
 comments: false
 description: >
     Kryptografia czyli sztuka pisania szyfrem, zrozumiałym tylko dla wtajemniczonych. W niniejszym tekście znajdziesz krótkie wprowadzenie do współczesnych metod kryptograficznych używanych w systemach informatycznych.
 ---
 
-Dzięki temu przewodnikowi poznasz obsługę plików w&nbsp;języku&nbsp;C. Nauczysz się obsługiwać standardowe wejście / wyjście używając bazowych instrukcji języka&nbsp;C - ***fprintf()***, ***fscanf()***, ***fread()***, ***fwrite()***, ***fseek()*** itp. 
+Dzięki temu przewodnikowi poznasz obsługę plików w&nbsp;języku&nbsp;C. Niniejszy dokument pokazuje jak obsługiwać standardowe wejście / wyjście używając bazowych instrukcji języka&nbsp;C - **fprintf()**{:.maroon}, **fscanf()**{:.maroon}, **fread()**{:.maroon}, **fwrite()**{:.maroon}, **fseek()**{:.maroon} itp. 
 {: .text-justify}
 
 <!--more-->
 
-### Typy plików
+## Typy plików
 Mając do czynienia z plikami, należy wiedzieć o dwóch ich rodzajach:
 - pliki tekstowe,
 - pliki binarne.
 
-Obydwa rodzaje plików nieco różną się od siebie z punktu widzenia zawartości oraz sposobu obsługi. Każdemu z nich są dedykowane nieco inne funkcje.
+Obydwa rodzaje plików nieco różną się od siebie z punktu widzenia zawartości oraz sposobu obsługi. Każdemu z nich są dedykowane nieco inne funkcje. 
 {: .text-justify}
 
-#### Pliki tekstowe
+### Pliki tekstowe
 
-Pliki tekstowe to zwykłe pliki zawierające dane tekstowe. Najczęściej mają rozszerzenie .txt. Możesz łatwo tworzyć pliki tekstowe za pomocą dowolnego prostego edytora tekstu.
+Pliki tekstowe to zwykłe pliki zawierające dane tekstowe. Najczęściej mają rozszerzenie .txt. Możesz łatwo tworzyć pliki tekstowe za pomocą dowolnego prostego edytora tekstu. Plik tekstowy jest szczególną wersją pliku binarnego.
 {: .text-justify}
 
 Kiedy otworzysz tego typu pliki, zobaczysz całą zawartość w pliku jako zwykły tekst. Pliki te można prosto zmieniać i&nbsp;edytować. Wymagają one minimalnego wysiłku w&nbsp;utrzymaniu, są łatwe do odczytania, jednakże zapewniają najmniejsze bezpieczeństwo i&nbsp;zajmują więcej miejsca na dysku.
 {: .text-justify}
 
-#### Pliki binarne
+### Pliki binarne
 
-Pliki binarne to najczęściej pliki zawierające dane binarne. Zwyczajowo mają różne rozszerzenia zależnie od tego co jest w nich przechowywane i&nbsp;jaki program je utworzył. Zamiast przechowywać dane w postaci zwykłego tekstu, przechowują je w&nbsp;postaci binarnej. Mogą pomieścić większą ilość danych, są dużo trudniejsze do odczytania ale&nbsp;mogą zapewniać dużo lepsze bezpieczeństwo niż pliki tekstowe.
+Pliki binarne to najczęściej pliki zawierające dane binarne. Zwyczajowo mają różne rozszerzenia, zależnie od danych jake są w nich przechowywane oraz jaki program je utworzył. Programy zazyczaj zamiast przechowywać dane w postaci zwykłego tekstu, przechowują je w&nbsp;postaci binarnej. Pliki binarne mogą pomieścić większą ilość danych, są dużo trudniejsze do odczytania i&nbsp;mogą zapewnić dużo lepsze bezpieczeństwo niż pliki tekstowe.
 {: .text-justify}
 
-### Operacje na plikach
+## Operacje na plikach
 
 W języku C&nbsp;można wykonywać cztery główne operacje na plikach, zarówno tekstowych jak i&nbsp;binarnych:
 
@@ -50,16 +50,16 @@ W języku C&nbsp;można wykonywać cztery główne operacje na plikach, zarówno
 - zamykanie pliku,
 - odczyt z i zapis informacji do pliku.
 
-#### Uchwyt pliku
+### Uchwyt pliku
 
-Podczas pracy z&nbsp;plikami należy zadeklarować wskaźnik typu FILE. Zmienna zdeklarowana w&nbsp;ten sposób stanowi uchwyt pliku, który jest wykorzystywany do komunikacji między systemem operacyjnym, a&nbsp;programem. 
+Podczas pracy z&nbsp;plikami należy zadeklarować wskaźnik typu **FILE**{:.blue}. Zmienna **fptr**{:.blue} zdeklarowana w&nbsp;ten sposób stanowi uchwyt pliku, który jest wykorzystywany do komunikacji między systemem operacyjnym, a&nbsp;programem. 
 {: .text-justify}
 
 ```c
-FILE *fptr;
+FILE* fptr;
 ```
 
-#### Otwieranie pliku do odczytu oraz zapisu
+### Otwieranie pliku do odczytu oraz zapisu
 
 Otwieranie pliku odbywa się za pomocą funkcji *fopen()* zdefiniowanej w&nbsp;pliku nagłówkowym *stdio.h*.
 
@@ -79,12 +79,14 @@ fopen("nazwa_pliku.bin", "rb");
 
 Załóżmy, że plik nazwa_pliku.txt nie istnieje. Pierwsza funkcja tworzy nowy plik o&nbsp;nazwie nazwa_pliku.txt i&nbsp;otwiera go do zapisu zgodnie z&nbsp;trybem 'w'.
 Tryb pisania pozwala na tworzenie i&nbsp;edycję (nadpisywanie) zawartości pliku.
+{: .text-justify}
 
 Załóżmy teraz, że drugi plik binarny nazwa_pliku.bin istnieje. Druga funkcja otwiera istniejący plik do odczytu w&nbsp;trybie binarnym&nbsp;'rb'.
 Tryb czytania pozwala tylko na odczytanie pliku, nie można do niego pisać.
+{: .text-justify}
 
-| Tryb    | Funkcja trybu                                                | Uwagi                                                        |
-| ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| &nbsp;&nbsp;Tryb&nbsp;&nbsp; | &nbsp;&nbsp;Funkcja trybu               | &nbsp;&nbsp;Uwagi                                            |
+|:-------:| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **r**   | Otwarcie do odczytu                                          | Jeśli plik nie istnieje, funkcja fopen() zwraca NULL.        |
 | **rb**  | Otwarcie do odczytu w trybie binarnym                        | Jeśli plik nie istnieje, funkcja fopen() zwraca NULL.        |
 | **w**   | Otwarcie do zapisu                                           | Jeśli plik istnieje to zostanie nadpisany, jeśli plik nie istnieje to zostanie utworzony. |
@@ -100,13 +102,15 @@ Tryb czytania pozwala tylko na odczytanie pliku, nie można do niego pisać.
 
 #### Odczyt i zapis plików tekstowych
 
-Do odczytu i&nbsp;zapisu do pliku tekstowego używamy funkcji ***fprintf()*** oraz ***fscanf()***.
+Do odczytu i&nbsp;zapisu do pliku tekstowego używamy funkcji **fprintf()**{:.maroon} oraz **fscanf()**{:.maroon}.
 
-Są one po prostu plikowymi odpowiednikami funkcji ***printf()*** oraz ***scanf()***. Jedyna różnica polega na tym, że ***fprintf()*** oraz ***fscanf()*** wymagają podania wskaźnika do struktury ***FILE***.
+Są one po prostu plikowymi odpowiednikami funkcji **printf()**{:.maroon} oraz **scanf()**{:.maroon}. Jedyna różnica polega na tym, że **fprintf()**{:.maroon} oraz **fscanf()**{:.maroon} wymagają podania wskaźnika do struktury **FILE**{:.blue}.
+{: .text-justify}
 
 ##### Przykład 1: zapis do pliku tekstowego
 
 Poniższy program pobiera od użytkownika liczbę i&nbsp;zapisuje w pliku *plik.txt*.
+{: .text-justify}
 
 ```c
 #include <stdio.h>
@@ -137,10 +141,12 @@ int main()
 ```
 
 Po skompilowaniu i&nbsp;uruchomieniu powyższego programu można zobaczyć plik tekstowy o&nbsp;nazwie *plik.txt* utworzony w&nbsp;katalogu w&nbsp;którym został uruchomiony program. Po otwarciu tego pliku widać liczbę wpisaną przez użytkownika zapisaną w postaci tekstu.
+{: .text-justify}
 
 ##### Przykład 2: odczyt z pliku tekstowego
 
 Poniższy program otwiera wcześniej utworzony plik o&nbsp;nazwie *plik.txt* i&nbsp;wczytuje z&nbsp;niego zapisaną liczbę.
+{: .text-justify}
 
 ```c
 #include <stdio.h>
@@ -168,17 +174,22 @@ int main()
 ```
 
 Powyższy program odczytuje liczbę całkowitą znajdującą się w pliku *plik.txt*, a następnie wypisuje ją na ekranie.
+{: .text-justify}
 
 Jeśli udało się stworzyć plik przy użyciu programu z przykładu 1, to uruchomienie tego programu da liczbę całkowitą, wcześniej którą wprowadziłeś.
+{: .text-justify}
 
-W podobny sposób można wykorzystać inne funkcje do wczytywania danych z pliku, takie jak ***fgetchar()***, ***fputc()*** itp.
+W podobny sposób można wykorzystać inne funkcje do wczytywania danych z pliku, takie jak **fgetchar()**{:.maroon}, **fputc()**{:.maroon} itp.
+{: .text-justify}
 
 ### Odczyt i zapis plików binarnych
 
-Do zapisu oraz odczytu z dysku plików binarnych stosuje się odpowiednio instrukcję ***fread()*** oraz ***fwrite()***.
+Do zapisu oraz odczytu z dysku plików binarnych stosuje się odpowiednio instrukcję **fread()**{:.maroon} oraz **fwrite()**{:.maroon}.
+{: .text-justify}
 
 #### Zapis do pliku binarnego
-Aby zapisać do pliku binarnego, należy użyć funkcji ***fwrite()***. Funkcje przyjmują cztery argumenty:
+Aby zapisać do pliku binarnego, należy użyć funkcji **fwrite()**{:.maroon}. Funkcje przyjmują cztery argumenty:
+{: .text-justify}
 
 ```c
 fwrite(addressData, sizeData, numbersData, pointerToFile);
@@ -192,6 +203,7 @@ fwrite(addressData, sizeData, numbersData, pointerToFile);
 ##### Przykład 3: zapis pliku binarnego
 
 Ten program tworzy nowy plik o nazwie *plik.bin* na dysku w katalogu w którym został uruchomiony program.
+{: .text-justify}
 
 ```c
 #include <stdio.h>
@@ -228,19 +240,25 @@ int main()
 }
 ```
 
-Deklarujemy strukturę ***trzyNum*** zawierającą trzy liczby - ***n1***, ***n2*** oraz ***n3***, a następnie definiujemy ją w funkcji *main* jako ***num***.
+Deklarujemy strukturę **trzyNum**{:.blue} zawierającą trzy liczby - **n1**{:.blue}, **n2**{:.blue} oraz **n3**{:.blue}, a następnie definiujemy ją w funkcji *main* jako **num**{:.blue}.
+{: .text-justify}
 
-Teraz wewnątrz pętli **for** zapisujemy wartość do pliku za pomocą funkcji ***fwrite()***.
+Teraz wewnątrz pętli *for* zapisujemy wartość do pliku za pomocą funkcji **fwrite()**{:.maroon}.
+{: .text-justify}
 
-Pierwszy parametr przyjmuje adres ***num***, a drugi rozmiar struktury ***trzyNum***.
+Pierwszy parametr przyjmuje adres **num**{:.blue}, a drugi rozmiar struktury **trzyNum**{:.blue}.
+{: .text-justify}
 
-Ponieważ wstawiamy tylko jedną instancję ***num***, trzeci parametr wynosi 1. Ostatni parametr *fptr* wskazuje na plik, w którym przechowujemy dane.
+Ponieważ wstawiamy tylko jedną instancję **num**{:.blue}, trzeci parametr wynosi 1. Ostatni parametr **fptr**{:.blue} wskazuje na plik, w którym przechowujemy dane.
+{: .text-justify}
 
 Na koniec zamykamy plik.
+{: .text-justify}
 
 #### Odczyt pliku binarnego
 
-Do odczytu zawartości pliku binarnego należy użyć funkcji ***fread()***. Funkcja ta przyjmuje analogiczne parametry jak wcześniej opisywana funkcja ***fwrite()***:
+Do odczytu zawartości pliku binarnego należy użyć funkcji **fread()**{:.blue}. Funkcja ta przyjmuje analogiczne parametry jak wcześniej opisywana funkcja **fwrite()**{:.blue}:
+{: .text-justify}
 
 - addressData - adres danych, które mają zostać zapisane na dysku,
 - sizeData - rozmiar pojedynczego elementu danych, które mają być zapisane na dysku,
@@ -250,6 +268,7 @@ Do odczytu zawartości pliku binarnego należy użyć funkcji ***fread()***. Fun
 ##### Przykład 4: odczyt dany z pliku binarnego
 
 Poniższy program wczytuje dane z pliku plik.bin i wyświetla je na ekranie.
+{: .text-justify}
 
 ```c
 #include <stdlib.h>
@@ -283,15 +302,19 @@ int main()
 }
 ```
 
-W uproszczeniu, czytasz jeden rekord o rozmiarze threeNum z pliku wskazywanego przez *fptr do struktury num.
+W uproszczeniu, czytasz jeden rekord o rozmiarze **threeNum**{:.blue} z pliku wskazywanego przez **fptr**{:.blue} do struktury **num**{:.blue}.
+{: .text-justify}
 
 Po uruchomieniu tego programu otrzymasz te same rekordy, które zostały wstawione w przykładzie 3.
+{: .text-justify}
 
 ### Pobieranie danych z wybranego miejsca pliku
 
 Jeśli masz wiele rekordów wewnątrz pliku i potrzebujesz dostępu do rekordu w określonej pozycji, należy pominąć wszystkie rekordy przed nim, aby znaleźć się w tej określonej pozycji.
+{: .text-justify}
 
-Do pominięcia określonej porcji danych można użyć funkcji ***fseek()***.
+Do pominięcia określonej porcji danych można użyć funkcji **fseek()**{:.maroon}.
+{: .text-justify}
 
 #### Składnia fseek
 
@@ -299,7 +322,8 @@ Do pominięcia określonej porcji danych można użyć funkcji ***fseek()***.
 fseek(FILE *fptr, long int offset, int whence);
 ```
 
-Pierwszy parametr *fptr jest wskaźnikiem do pliku. Drugi parametr to pozycja rekordu, który ma zostać odnaleziony, a trzeci parametr określa miejsce, w którym rozpoczyna się offset. Parametr whence może przyjąć jedną z trzech wartości:
+Pierwszy parametr **fptr**{:.blue} jest wskaźnikiem do pliku. Drugi parametr to pozycja rekordu, który ma zostać odnaleziony, a&nbsp;trzeci parametr określa miejsce, w&nbsp;którym rozpoczyna się offset. Parametr whence może przyjąć jedną z trzech wartości:
+{: .text-justify}
 
 - SEEK_SET - rozpoczyna przesunięcie od początku pliku,
 - SEEK_END - rozpoczyna przesunięcie od końca pliku,
@@ -307,7 +331,8 @@ Pierwszy parametr *fptr jest wskaźnikiem do pliku. Drugi parametr to pozycja re
 
 #### Użycie fseek
 
-Ten program zacznie czytać rekordy z pliku plik.bin w odwrotnej kolejności (od ostatniego do pierwszego), a następnie wypisze je na ekranie.
+Ten program zacznie czytać rekordy z&nbsp;pliku plik.bin w&nbsp;odwrotnej kolejności (od ostatniego do pierwszego), a&nbsp;następnie wypisze je na ekranie.
+{: .text-justify}
 
 ```c
 #include <stdio.h>
@@ -346,4 +371,5 @@ int main()
 }
 ```
 
-Funkcja ***fseek()*** może być używana zarówno podczas odczytu jak i zapisu danych w pliku.
+Funkcja **fseek()**{:.maroon} może być używana zarówno podczas odczytu jak i zapisu danych w pliku.
+{: .text-justify}

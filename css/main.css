@@ -1636,6 +1636,10 @@ ul.without-bullet-justify, ul.without-bullet-justify li {
   color: maroon;
 }
 
+.text-justify strong.blue, .text-justify-has-drop-cap strong.blue {
+  color: blue;
+}
+
 .text-justify-has-drop-cap:not(:focus):first-letter {
   float: left;
   font-size: 5.4em;
