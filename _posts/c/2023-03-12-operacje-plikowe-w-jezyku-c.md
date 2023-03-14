@@ -15,8 +15,8 @@ description: >
     Kryptografia czyli sztuka pisania szyfrem, zrozumiałym tylko dla wtajemniczonych. W niniejszym tekście znajdziesz krótkie wprowadzenie do współczesnych metod kryptograficznych używanych w systemach informatycznych.
 ---
 
-Dzięki temu przewodnikowi poznasz obsługę plików w&nbsp;języku&nbsp;C. Niniejszy dokument pokazuje jak obsługiwać standardowe wejście / wyjście używając bazowych instrukcji języka&nbsp;C - **fprintf()**{:.maroon}, **fscanf()**{:.maroon}, **fread()**{:.maroon}, **fwrite()**{:.maroon}, **fseek()**{:.maroon} itp. 
-{: .text-justify}
+Dzięki temu przewodnikowi poznasz obsługę plików w&nbsp;języku&nbsp;C. Niniejszy dokument pokazuje jak obsługiwać standardowe wejście / wyjście używając bazowych instrukcji języka&nbsp;C - **fprintf()**{:.maroon}, **fscanf()**{:.maroon}, **fread()**{:.maroon}, **fwrite()**{:.maroon}, **fseek()**{:.maroon} itp. Dodatkowo znajdują się tu opisy trybów w jakich można otworzyć plik z poziomu języka C.
+{:.text-justify-has-drop-cap}
 
 <!--more-->
 
