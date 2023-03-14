@@ -47,6 +47,10 @@ exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
 menu:
   - title:             Blog
     url:               /blog/
+  - title:             Projekty
+    url:               /projects/
+  - title:             Dydaktyka
+    url:               /dydaktyka/
     
 tag:  ""
 
@@ -89,7 +93,12 @@ katex:
     error_color: "#cc0000"                  # errorColor  
 
 scholar:
-  style: modern-language-association    
+#  style: ieee
+  #style: begell-house-chicago-author-date 
+  style: ieee-transactions-on-medical-imaging
+  source: _bibliography
+  #bibliography_list_tag: ul
+  #details_layout: details.html
 
 
 defaults:
