@@ -8,8 +8,8 @@ description: >
 #accent_image: /assets/img/cover/warsztat-bg.jpg
 #image: /assets/img/cover/warsztat-bg.jpg
 img: cover/anaconda.png
-ximg: tmb/anaconda.png
-copyrights: cover image Photo by https://www.australiazoo.com.au/wildlife/our-animals/anaconda-green/
+ximg: tmb/anaconda-min.png
+no-copyrights: cover image Photo by https://www.australiazoo.com.au/wildlife/our-animals/anaconda-green/
 #hide_image: true
 author: rroszczyk
 comments: false

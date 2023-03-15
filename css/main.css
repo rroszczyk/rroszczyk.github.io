@@ -1185,6 +1185,13 @@ footer .copyright {
   margin: 0;
 }
 
+article .copyright {
+  font-size: 10px;
+  text-align: right;
+  margin: 0;
+}
+
+
 .post {
   width: 100%;
   max-width: 100%;

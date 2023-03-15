@@ -67,6 +67,9 @@ layout: main
         </div>
       </div>
       {% include disqus.html %}
+      {% if page.copyrights %}
+        <div class="copyright">{{page.copyrights}}</div>
+      {% endif %}
     </div> <!-- End Wrap Content -->
   </div> <!-- End Page Content -->
 </article> <!-- End Article Page -->

@@ -11,7 +11,7 @@ series: [python praktycznie]
 languages:
 - pl
 img: cover/build-unsplash.jpg
-ximg: tmb/build-unsplash_x.jpg
+ximg: tmb/build-unsplash_x-min.jpg
 author: rroszczyk
 comments: false
 #Photo by <a href="https://unsplash.com/@danist07?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Danist Soh</a> on <a href="https://unsplash.com/s/photos/build?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>  

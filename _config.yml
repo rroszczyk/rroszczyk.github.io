@@ -82,9 +82,17 @@ kramdown:
   math_engine:         katex
   math_engine_opts:    {}
   syntax_highlighter: rouge
-#  syntax_highlighter_opts:  
-#    block:
-#      line_numbers: true
+  syntax_highlighter_opts:  
+    default_lang: text
+    css_class   : 'highlight'    
+    block:
+      line_numbers: false
+      default_lang: text
+      css_class   : 'highlight'          
+    span:
+      default_lang: text
+      line_numbers: false     
+      css_class   : 'highlight'           
 
 katex:
   rendering_options:

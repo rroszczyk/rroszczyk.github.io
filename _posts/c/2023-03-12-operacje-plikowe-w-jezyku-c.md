@@ -1,18 +1,19 @@
 ---
 layout: post
-title: C&#58; Operacje Plikowe 
-#tags: [kryptografia, DES, IDEA, LOTW, PGP, RSA, SSH, SSL]
+title: Operacje plikowe w języku C
 categories: [programowanie]
 accent_image: /assets/img/key-bg.jpg
 image: /img/kryptografia/enigma_1600x600.jpg
-img: cover/files.png
-ximg: tmb/files.jpg
+img: cover/files-min.png
+ximg: tmb/files-min.jpg
 hide_image: true
 author: rroszczyk
 tags: [c,pliki]
 comments: false
 description: >
-    Kryptografia czyli sztuka pisania szyfrem, zrozumiałym tylko dla wtajemniczonych. W niniejszym tekście znajdziesz krótkie wprowadzenie do współczesnych metod kryptograficznych używanych w systemach informatycznych.
+   Systemy informatyczne często wykorzystują pliki do przechowywania danych. Operacje plikowe w języku C pozwalają na użycie zawartości tychże plików w programie komputerowym.
+copyrights: Cover Image Photo by <a href="https://unsplash.com/@qwitka?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Maksym Kaharlytskyi</a> on <a href="https://unsplash.com/photos/Q9y3LRuuxmg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a>
+    
 ---
 
 Dzięki temu przewodnikowi poznasz obsługę plików w&nbsp;języku&nbsp;C. Niniejszy dokument pokazuje jak obsługiwać standardowe wejście / wyjście używając bazowych instrukcji języka&nbsp;C - **fprintf()**{:.maroon}, **fscanf()**{:.maroon}, **fread()**{:.maroon}, **fwrite()**{:.maroon}, **fseek()**{:.maroon} itp. Dodatkowo znajdują się tu opisy trybów w jakich można otworzyć plik z poziomu języka C.
