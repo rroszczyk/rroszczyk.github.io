@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">  
+	<title>Python&#58; Zarządzanie Pakietami - Radosław Roszczyk</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+    <meta content="Radosław Roszczyk" property="og:site_name">
+  
+    <meta content="Python&#58; Zarządzanie Pakietami" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Pracując w&nbsp;środowisku Python wykorzystuje się wiele różnych pakietów. Conda pozwala w&nbsp;łatwy sposób zapanować nad środowiskiem wykonywalnym, pakietami oraz wszystkimi zależnościami jakie między nimi występują.
+" property="og:description">
+  
+  
+    <meta content="/python/conda-zarzadzanie-srodowiskiem-python/" property="og:url">
+  
+  
+    <meta content="2021-12-21T00:00:00+01:00" property="article:published_time">
+    <meta content="/about/" property="article:author">
+  
+  
+    <meta content="/img/cover/anaconda.png" property="og:image">
+  
+  
+    
+    <meta content="python" property="article:section">
+    
+  
+  
+    
+    <meta content="python" property="article:tag">
+    
+    <meta content="conda" property="article:tag">
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@rroszczyk">
+  
+    <meta name="twitter:title" content="Python&#58; Zarządzanie Pakietami">
+  
+  
+    <meta name="twitter:url" content="/python/conda-zarzadzanie-srodowiskiem-python/">
+  
+  
+    <meta name="twitter:description" content="Pracując w&nbsp;środowisku Python wykorzystuje się wiele różnych pakietów. Conda pozwala w&nbsp;łatwy sposób zapanować nad środowiskiem wykonywalnym, pakietami oraz wszystkimi zależnościami jakie między nimi występują.
+">
+  
+  
+    <meta name="twitter:image:src" content="/img/cover/anaconda.png">
+  
+
+	<meta name="description" content="Pracując w&nbsp;środowisku Python wykorzystuje się wiele różnych pakietów. Conda pozwala w&nbsp;łatwy sposób zapanować nad środowiskiem wykonywalnym, pakietami oraz wszystkimi zależnościami jakie między nimi występują.
+">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Lato:300,400,700&display=swap" rel="stylesheet">
+	<!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f7285abe6b.js" crossorigin="anonymous"></script>
+	<!-- Styles -->
+	<link rel="stylesheet" href="/css/main.css">
+  <!-- Katex -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/img/radoslaw_roszczyk_192.jpg" alt="Radosław Roszczyk"></a>
+      </div>
+      <div class="author-name">Radosław Roszczyk</div>
+      <p>notatki, materiały, oraz inne przydatne rzeczy</p>
+    </div>
+  </header> <!-- End Header -->
+  <main>
+  <!-- Menu -->    
+  </main>
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Kontakt</h3>
+                                
+      <ul>
+        
+          <li><a href="https://twitter.com/rroszczyk" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+        
+        
+          <li class="github"><a href="http://github.com/rroszczyk" target="_blank"><i class="fab fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/in/rroszczyk" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        
+        
+          <!-- <li class="email"><a href="mailto:example.david@blog.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>-->
+          <li><a href="https://go.roszczyk.net/pw-pl" target="_blank"><i class="fa fa-university" aria-hidden="true"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2023 &copy; Radosław Roszczyk</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src=/img/cover/anaconda.png alt="Python&#58; Zarządzanie Pakietami">
+        
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+                
+        <h1 class="page-title">Zarządzanie pakietami oraz środowiskiem dla języka Python</h1>
+                
+        <!-- <div class="page-date"><span>2021, Dec 21&nbsp;&nbsp;&nbsp;&nbsp;</span></div> -->
+        <div class="page-date"><span>
+          
+          21
+          Grudzień
+          
+          2021           
+        </span></div>        
+      </header>
+      <p class="text-justify-has-drop-cap">Pracując z Python’em wykorzystuje się wiele różnych pakietów w różnych wersjach. Wiele z tych pakietów działa z konkretnymi wersjami języka bądź wymaga do prawidłowej pracy innych pakietów w ściśle określonych wersjach. Instalując wszystko na pojedynczym komputerze w najlepszym wypadku można doprowadzić do olbrzymiego bałaganu, w najgorszym wszystko przestanie działać.</p>
+
+<p class="text-justify">Rozwiązaniem problemu bałaganu w pakietach jest konfiguracja wielu środowisk pracy dostosowanych do konkretnych potrzeb. Poza chaosem, istnieje więcej przypadków użycia, w których posiadanie dodatkowych środowisk może się przydać:</p>
+<ul class="text-justify">
+  <li>Masz aplikację, która kiedyś działała poprawnie, ale teraz nie daje się jej uruchomić. Może to być spowodowane tym, że jeden z wymaganych pakietów nie jest już kompatybilny z innymi częściami systemu. Możliwym rozwiązaniem tego problemu jest utworzenie nowego środowiska dla Twojej aplikacji, które zawiera wersję Pythona oraz pakiety, które są całkowicie kompatybilne z Twoją aplikacją.</li>
+  <li>Tworzysz system z innymi osobami i chcesz mieć pewność, że Twoja aplikacja działa poprawnie na komputerach innych członków zespołu i odwrotnie. Do tego celu również świetnie nadaje się mechanizm pozwalający tworzyć środowiska w dokładnie takich samych wersjach na komputerach wszystkich uczestników projektu.</li>
+  <li>Dostarczasz aplikację komuś innemu i ponownie chcesz mieć pewność, że będzie ona działa bezproblemowo na jego komputerze. Wykorzystanie wiernej kopii środowiska pozwoli zapewnić zgodność systemu, a co za tym idzie prawidłowe uruchomienie aplikacji.</li>
+</ul>
+
+<p class="text-justify">Środowisko składa się z pewnej wersji Pythona oraz zestawu odpowiednich pakietów. W związku z tym, jeśli chcesz rozwijać lub używać aplikacji z różnymi wymaganiami dotyczącymi różnych wersji Pythona bądź pakietów, powinieneś skonfigurować różne środowiska.</p>
+
+<h2 id="system-zarządzania-pakietami-oraz-środowiskiem">System zarządzania pakietami oraz środowiskiem</h2>
+<p class="text-justify">Najpopularniejszymi systemami zarządzania jest <strong class="maroon">PIP</strong> do zarządzania pakietami oraz <strong class="maroon">virtualenv</strong> do zarządzania środowiskiem. Obydwa narzędzia instalowane są razem z Python’em. Alternatywnym rozwiązaniem jest <strong class="maroon">conda</strong> pozwalająca jednocześnie zarządzać pakietami oraz środowiskiem. Oba systemy pozwalają w łatwy sposób zapanować nad chaosem jaki może powstać w naszym środowisku.</p>
+
+<p class="text-justify">Conda udostępnia wszystkie niezbędne mechanizmy zarządzania zarówno pakietami jak i środowiskiem. Conda pozwala na szybką i łatwą instalację pakietów oraz ich zależności. Conda używana jako menedżer pakietów pomaga znaleźć oraz zainstalować potrzebne pakiety w repozytoriach Internetowych. Jeśli potrzebujesz pakietu, który wymaga innej wersji Pythona, nie musisz korzystać z innego menedżera środowisk, ponieważ conda jest doskonałym menedżerem środowisk. Za pomocą zaledwie kilku poleceń można skonfigurować całkowicie odrębne środowisko do uruchamiania odpowiedniej wersji Pythona z odrębnym zestawem pakietów, jednocześnie nadal uruchamiając standardową wersję Pythona w domyślnym środowisku.</p>
+
+<h3 id="instalacja">Instalacja</h3>
+<p class="text-justify">Menedżer pakietów oraz środowiska conda jest dołączony do wszystkich wersji programów Anaconda i Miniconda. Miniconda dostępna jest w bezpłatnej wersji, natomiast Anaconda występuje w wersji bezpłatnej oraz płatnej (Anaconda Enterprise platform). Jeśli chodzi o główne różnice, to Miniconda wymaga około 400MB miejsca na dysku i zawiera tylko kilka podstawowych pakietów. Natomiast instalator Anacondy wymaga około 3GB miejsca na dysku, i instaluje ponad 150 pakietów, między innymi pakiety do statystyki oraz uczenia maszynowego. Instaluje on również <strong class="maroon">Anaconda Navigator</strong>, narzędzie GUI, które pomaga zarządzać środowiskami Conda oraz zainstalowanymi pakietami.</p>
+
+<p class="text-justify">Osobiście preferuję Minicondę, ponieważ zazwyczaj nie potrzebuję większości pakietów, które są domyślnie dołączone do Anacondy. Innym powodem jest to, że zastosowanie Minicondy pozwala mi na płynniejsze powielanie środowiska (na przykład, jeśli chcę go używać także na innym komputerze), ponieważ na obu komputerach instaluję tylko pakiety wymagane przez aplikację nad którą aktualnie pracuje.</p>
+
+<p class="text-justify">Wszystkie trzy wymienione instalatory są dostępne w wersjach dla systemu Linux, Windows oraz macOS. Ponadto do wyboru jest wersja 32 oraz 64 bitowa. Wybór wersji zależy od systemu operacyjnego którego używasz, przy czym polecam wersje 64 bitowe ponieważ jest dla niej dostępne więcej pakietów.</p>
+
+<h2 id="środowisko-pythona">Środowisko Pythona</h2>
+<p class="text-justify">Niezależnie od tego którą wersję instalacyjną wybierzemy to instalator najpierw instaluje Condę, która - jak już wspomniałem - jest narzędziem do zarządzania pakietami oraz środowiskiem. Następnie Conda tworzy środowisko root, które zawiera dwie rzeczy:</p>
+<ul class="text-justify">
+  <li>aktualną wersję Pythona</li>
+  <li>kilka podstawowych pakietów.</li>
+</ul>
+
+<p class="text-justify">Obok środowiska głównego można utworzyć dowolną liczbę dodatkowych środowisk. Chodzi o to, że te dodatkowe środowiska mogą zawierać różne wersje Pythona oraz innych pakietów.</p>
+
+<h3 id="struktura-katalogów">Struktura katalogów</h3>
+<p class="text-justify">Conda instaluje się w jednym katalogu. Wewnątrz tego katalogu znajduje się środowisko <strong class="maroon">root</strong> oraz katalogi systemu Conda. Z naszego punktu widzenia istotny jest katalog <strong class="maroon">pkgs</strong> zawierający zbuforowane pakiety w skompresowanych i nieskompresowanych formatach oraz katalog <strong class="maroon">envs</strong> zawierający utworzone i skonfigurowane środowiska.</p>
+
+<h3 id="funkcje-podstawowe">Funkcje podstawowe</h3>
+<p class="text-justify">Do sprawdzenie parametrów aktualnie zainstalowanego środowiska conda należy użyć polecenia:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda info
+</code></pre></div></div>
+<p class="text-justify">Informacje zwracane przez to polecenie dotyczą środowiska bazowego root za wyjątkiem nazwy aktywnego środowiska oraz lokalizacji plików aktywnego środowiska. W celu aktualizacji condy oraz środowiska bazowego należy użyć polecenia:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda update conda
+</code></pre></div></div>
+
+<h3 id="tworzenie-nowego-środowiska">Tworzenie nowego środowiska</h3>
+<p class="text-justify">Aby utworzyć nowe środowisko o nazwie, na przykład srodowisko_testowe (możesz je nazwać jak chcesz ale pamiętaj, że w nazwach nie można używać znaków specjalnych /, :, # oraz spacji), uruchom:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda create <span class="nt">--name</span> srodowisko_testowe
+</code></pre></div></div>
+
+<p class="text-justify">Utworzone środowisko będzie używać tej samej wersji Pythona, co interpreter Pythona bieżącej powłoki. Aby określić inną wersję Pythona, użyj polecenia:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda create <span class="nt">--name</span> srodowisko_testowe <span class="nv">python</span><span class="o">=</span>3.10
+</code></pre></div></div>
+<h3 id="przełączanie-między-środowiskami">Przełączanie między środowiskami</h3>
+<p class="text-justify">Wewnątrz nowej instalacji Conda, środowisko root jest ustawione jako domyślne, więc można go używać bez dodatkowej aktywacji. W innych przypadkach, jeśli chcesz używać środowiska, musisz je najpierw aktywować. Do tego celu używamy polecenia:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda activate srodowisko_testowe 
+</code></pre></div></div>
+<p class="text-justify">Katalogi z plikami wykonywalnymi aktywnego środowiska są dodawane do ścieżki systemowej. Możesz opuścić aktywne środowisko przełączając się ponownie do domyślnego środowiska <strong class="maroon">root</strong> za pomocą tego polecenia:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda deactivate
+</code></pre></div></div>
+
+<h3 id="listowanie-dostępnych-środowisk">Listowanie dostępnych środowisk</h3>
+<p class="text-justify">Do wyświetlenia listy dostępnych środowisk należy użyć polecenia:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">env </span>list
+</code></pre></div></div>
+<p class="text-justify">Natomiast do sprawdzenia wersji zainstalowanych pakietów w aktywnym środowisku służy polecenie:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda list
+</code></pre></div></div>
+
+<h3 id="usuwanie-środowiska">Usuwanie środowiska</h3>
+<p class="text-justify">Jeżeli uznamy, że dane środowisko nie będzie nam już potrzebne możemy je usunąć. Usunięcie środowiska zwalnia zasoby dyskowe zajmowane przez wszystkie pakiety danego środowiska. Usunięcie środowiska realizuje polecenie:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">env </span>remove <span class="nt">--name</span> srodowisko_do_usuniecia
+</code></pre></div></div>
+<p class="text-justify">Nie można usunąć środowiska bieżącego, dlatego operacje na środowiskach warto przeprowadzać zawsze z poziomu środowiska bazowego root. Nie ma również możliwości usunięcia środowiska root. To środowisko zostanie skasowane podczas deinstalacji condy.</p>
+
+<h2 id="zestawienie-najczęściej-używanych-komend-condy">Zestawienie najczęściej używanych komend condy</h2>
+<p>Na sam koniec zestawienie kilku najczęściej używanych komend condy.</p>
+
+<table class="table-center">
+  <thead>
+    <tr>
+      <th>Operacja</th>
+      <th>Polecenie</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sprawdzenie wersji zainstalowanej condy</td>
+      <td>conda info</td>
+    </tr>
+    <tr>
+      <td>Aktualizacja condy do najnowszej wersji</td>
+      <td>conda update conda</td>
+    </tr>
+    <tr>
+      <td>Utworzenie nowego środowiska dla pythona w wersji 3.10</td>
+      <td>conda create –name nazwa_srodowiska python=3.10</td>
+    </tr>
+    <tr>
+      <td>Aktywacja środowiska</td>
+      <td>conda activate nazwa_srodowiska</td>
+    </tr>
+    <tr>
+      <td>Wyświetlenie listy dostępnych środowisk</td>
+      <td>conda env list</td>
+    </tr>
+    <tr>
+      <td>Utworzenie kopii środowiska pod inną nazwą</td>
+      <td>conda create –clone nazwa_srodowiska –name nowe_srodowisko</td>
+    </tr>
+    <tr>
+      <td>Wyświetlenie pakietów dostępnych w aktywnym środowisku</td>
+      <td>conda list</td>
+    </tr>
+    <tr>
+      <td>Zapisanie informacji o środowisku do pliku</td>
+      <td>conda list –explicit &gt; nazwa_srodowiska.txt</td>
+    </tr>
+    <tr>
+      <td>Usunięcie środowiska</td>
+      <td>conda env remove –name nazwa_srodowiska_do_usuniecia</td>
+    </tr>
+    <tr>
+      <td>Odtworzenie środowiska z pliku</td>
+      <td>conda env create –file nazwa_srodowiska.txt</td>
+    </tr>
+    <tr>
+      <td>Wyszukanie pakietu</td>
+      <td>conda search nazwa_pakietu</td>
+    </tr>
+    <tr>
+      <td>Instalacja pakietu w aktywnym środowisku</td>
+      <td>conda install nazwa_pakietu</td>
+    </tr>
+    <tr>
+      <td>Usunięcie pakietu z aktywnego środowiska</td>
+      <td>conda remove nazwa_pakietu</td>
+    </tr>
+  </tbody>
+</table>
+<p class="caption-center"><a name="table_1"></a><strong>Tabela 1:</strong> Najczęściej używane komendy condy</p>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Python&#58; Zarządzanie Pakietami&url=/python/conda-zarzadzanie-srodowiskiem-python/" title="Udostępnij na Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=/python/conda-zarzadzanie-srodowiskiem-python/" title="Udostępnij na Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="http://www.linkedin.com/shareArticle?mini=true&url=/python/conda-zarzadzanie-srodowiskiem-python/" title="Udostępnij na LinkedIn" rel="nofollow" target="_blank">LinkedIn</a>
+        </div>
+        <div class="page-tag">
+          
+            
+            <a href="/python" class="tag">&#35; python</a>
+          
+          
+                        
+            
+            <!-- <a href="/tags/python" class="tag">&#35; python</a> -->
+                    
+          
+                        
+            
+            <!-- <a href="/tags/conda" class="tag">&#35; conda</a> -->
+                                
+            <a href="/tags#conda" class="tag">&#35; conda</a>
+                    
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+      
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126717565-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126717565-1');
+</script>
+
+<!-- Default Statcounter code for Radoslaw Roszczyk Blog
+https://blog.roszczyk.net -->
+<script type="text/javascript">
+var sc_project=12105020; 
+var sc_invisible=0; 
+var sc_security="087cd796"; 
+var scJsHost = "https://";
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
