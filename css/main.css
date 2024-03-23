@@ -1639,11 +1639,20 @@ ul.without-bullet-justify, ul.without-bullet-justify li {
   -webkit-hyphens: auto 
 }
 
-.text-justify strong.maroon, .text-justify-has-drop-cap strong.maroon {
+strong.maroon, em.maroon {
   color: maroon;
 }
 
-.text-justify strong.blue, .text-justify-has-drop-cap strong.blue {
+strong.blue, em.blue {
+  color: blue;
+}
+
+
+.text-justify strong.maroon, .text-justify em.maroon, .text-justify-has-drop-cap strong.maroon, .text-justify-has-drop-cap em.maroon {
+  color: maroon;
+}
+
+.text-justify strong.blue, .text-justify em.blue, .text-justify-has-drop-cap strong.blue, .text-justify-has-drop-cap em.blue {
   color: blue;
 }
 
