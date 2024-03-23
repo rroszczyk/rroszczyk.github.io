@@ -17,14 +17,14 @@
 " property="og:description">
   
   
-    <meta content="/programowanie/operacje-plikowe-w-jezyku-c/" property="og:url">
+    <meta content="http://localhost:4000/programowanie/operacje-plikowe-w-jezyku-c/" property="og:url">
   
   
     <meta content="2023-03-12T00:00:00+01:00" property="article:published_time">
-    <meta content="/about/" property="article:author">
+    <meta content="http://localhost:4000/about/" property="article:author">
   
   
-    <meta content="/img/cover/files-min.png" property="og:image">
+    <meta content="http://localhost:4000/img/cover/files-min.png" property="og:image">
   
   
     
@@ -46,14 +46,14 @@
     <meta name="twitter:title" content="Operacje plikowe w języku C">
   
   
-    <meta name="twitter:url" content="/programowanie/operacje-plikowe-w-jezyku-c/">
+    <meta name="twitter:url" content="http://localhost:4000/programowanie/operacje-plikowe-w-jezyku-c/">
   
   
     <meta name="twitter:description" content="Systemy informatyczne często wykorzystują pliki do przechowywania danych. Operacje plikowe w języku C pozwalają na użycie zawartości tychże plików w programie komputerowym.
 ">
   
   
-    <meta name="twitter:image:src" content="/img/cover/files-min.png">
+    <meta name="twitter:image:src" content="http://localhost:4000/img/cover/files-min.png">
   
 
 	<meta name="description" content="Systemy informatyczne często wykorzystują pliki do przechowywania danych. Operacje plikowe w języku C pozwalają na użycie zawartości tychże plików w programie komputerowym.
@@ -61,10 +61,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="">
-	<link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-touch-icon-144x144.png">
+	<link rel="shortcut icon" href="http://localhost:4000/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="http://localhost:4000/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://localhost:4000/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://localhost:4000/img/favicon/apple-touch-icon-144x144.png">
 	<!-- Chrome, Firefox OS and Opera -->
 	<meta name="theme-color" content="#263959">
 	<!-- Windows Phone -->
@@ -76,7 +76,7 @@
 	<!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f7285abe6b.js" crossorigin="anonymous"></script>
 	<!-- Styles -->
-	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="http://localhost:4000/css/main.css">
   <!-- Katex -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 </head>
@@ -120,7 +120,7 @@
       </ul>
     </section> <!-- End Section Contact -->
     <div class="copyright">
-      <p>2023 &copy; Radosław Roszczyk</p>
+      <p>2024 &copy; Radosław Roszczyk</p>
     </div>
   </footer> <!-- End Footer -->
 </aside> <!-- End Sidebar -->
@@ -149,12 +149,14 @@
           2023           
         </span></div>        
       </header>
-      <p class="text-justify-has-drop-cap">Dzięki temu przewodnikowi poznasz obsługę plików w języku C. Niniejszy dokument pokazuje jak obsługiwać standardowe wejście / wyjście używając bazowych instrukcji języka C - <strong class="maroon">fprintf()</strong>, <strong class="maroon">fscanf()</strong>, <strong class="maroon">fread()</strong>, <strong class="maroon">fwrite()</strong>, <strong class="maroon">fseek()</strong> itp. Dodatkowo znajdują się tu opisy trybów w jakich można otworzyć plik z poziomu języka C.</p>
+      <p class="text-justify-has-drop-cap">Dzięki temu przewodnikowi poznasz obsługę plików w języku C. Niniejszy dokument pokazuje jak obsługiwać standardowe wejście / wyjście używając bazowych instrukcji języka C - <em class="maroon">fprintf()</em>, <em class="maroon">fscanf()</em>, <em class="maroon">fread()</em>, <em class="maroon">fwrite()</em>, <em class="maroon">fseek()</em>, <em class="maroon">tmpfile()</em> itp. Dodatkowo znajdują się tu opisy trybów w jakich można otworzyć plik z poziomu języka C.</p>
 
 <!--more-->
 
 <h2 id="typy-plików">Typy plików</h2>
+
 <p>Mając do czynienia z plikami, należy wiedzieć o dwóch ich rodzajach:</p>
+
 <ul>
   <li>pliki tekstowe,</li>
   <li>pliki binarne.</li>
@@ -164,7 +166,7 @@
 
 <h3 id="pliki-tekstowe">Pliki tekstowe</h3>
 
-<p class="text-justify">Pliki tekstowe to zwykłe pliki zawierające dane tekstowe. Najczęściej mają rozszerzenie .txt. Możesz łatwo tworzyć pliki tekstowe za pomocą dowolnego prostego edytora tekstu. Plik tekstowy jest szczególną wersją pliku binarnego.</p>
+<p class="text-justify">Pliki tekstowe to zwykłe pliki zawierające dane tekstowe. Najczęściej mają rozszerzenie <em>.txt</em>. Możesz łatwo tworzyć pliki tekstowe za pomocą dowolnego prostego edytora tekstu. Plik tekstowy jest szczególną wersją pliku binarnego.</p>
 
 <p class="text-justify">Kiedy otworzysz tego typu pliki, zobaczysz całą zawartość w pliku jako zwykły tekst. Pliki te można prosto zmieniać i edytować. Wymagają one minimalnego wysiłku w utrzymaniu, są łatwe do odczytania, jednakże zapewniają najmniejsze bezpieczeństwo i zajmują więcej miejsca na dysku.</p>
 
@@ -192,7 +194,7 @@
 
 <h3 id="otwieranie-pliku-do-odczytu-oraz-zapisu">Otwieranie pliku do odczytu oraz zapisu</h3>
 
-<p>Otwieranie pliku odbywa się za pomocą funkcji <em>fopen()</em> zdefiniowanej w pliku nagłówkowym <em>stdio.h</em>.</p>
+<p>Otwieranie pliku odbywa się za pomocą funkcji <em class="maroon">fopen()</em> zdefiniowanej w pliku nagłówkowym <em>stdio.h</em>.</p>
 
 <p>Składnia otwarcia pliku dla standardowego wejścia / wyjścia to:</p>
 
@@ -286,9 +288,9 @@ Tryb czytania pozwala tylko na odczytanie pliku, nie można do niego pisać.</p>
 
 <h4 id="odczyt-i-zapis-plików-tekstowych">Odczyt i zapis plików tekstowych</h4>
 
-<p>Do odczytu i zapisu do pliku tekstowego używamy funkcji <strong class="maroon">fprintf()</strong> oraz <strong class="maroon">fscanf()</strong>.</p>
+<p>Do odczytu i zapisu do pliku tekstowego używamy funkcji <em class="maroon">fprintf()</em> oraz <em class="maroon">fscanf()</em>.</p>
 
-<p class="text-justify">Są one po prostu plikowymi odpowiednikami funkcji <strong class="maroon">printf()</strong> oraz <strong class="maroon">scanf()</strong>. Jedyna różnica polega na tym, że <strong class="maroon">fprintf()</strong> oraz <strong class="maroon">fscanf()</strong> wymagają podania wskaźnika do struktury <strong class="blue">FILE</strong>.</p>
+<p class="text-justify">Są one po prostu plikowymi odpowiednikami funkcji <em class="maroon">printf()</em> oraz <em class="maroon">scanf()</em>. Jedyna różnica polega na tym, że <em class="maroon">fprintf()</em> oraz <em class="maroon">fscanf()</em> wymagają podania wskaźnika do struktury <strong class="blue">FILE</strong>.</p>
 
 <h5 id="przykład-1-zapis-do-pliku-tekstowego">Przykład 1: zapis do pliku tekstowego</h5>
 
@@ -355,14 +357,14 @@ Tryb czytania pozwala tylko na odczytanie pliku, nie można do niego pisać.</p>
 
 <p class="text-justify">Jeśli udało się stworzyć plik przy użyciu programu z przykładu 1, to uruchomienie tego programu da liczbę całkowitą, wcześniej którą wprowadziłeś.</p>
 
-<p class="text-justify">W podobny sposób można wykorzystać inne funkcje do wczytywania danych z pliku, takie jak <strong class="maroon">fgetchar()</strong>, <strong class="maroon">fputc()</strong> itp.</p>
+<p class="text-justify">W podobny sposób można wykorzystać inne funkcje do wczytywania danych z pliku, takie jak <em class="maroon">fgetchar()</em>, <em class="maroon">fputc()</em> itp.</p>
 
 <h3 id="odczyt-i-zapis-plików-binarnych">Odczyt i zapis plików binarnych</h3>
 
-<p class="text-justify">Do zapisu oraz odczytu z dysku plików binarnych stosuje się odpowiednio instrukcję <strong class="maroon">fread()</strong> oraz <strong class="maroon">fwrite()</strong>.</p>
+<p class="text-justify">Do zapisu oraz odczytu z dysku plików binarnych stosuje się odpowiednio instrukcję <em class="maroon">fread()</em> oraz <em class="maroon">fwrite()</em>.</p>
 
 <h4 id="zapis-do-pliku-binarnego">Zapis do pliku binarnego</h4>
-<p class="text-justify">Aby zapisać do pliku binarnego, należy użyć funkcji <strong class="maroon">fwrite()</strong>. Funkcje przyjmują cztery argumenty:</p>
+<p class="text-justify">Aby zapisać do pliku binarnego, należy użyć funkcji <em class="maroon">fwrite()</em>. Funkcje przyjmują cztery argumenty:</p>
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fwrite</span><span class="p">(</span><span class="n">addressData</span><span class="p">,</span> <span class="n">sizeData</span><span class="p">,</span> <span class="n">numbersData</span><span class="p">,</span> <span class="n">pointerToFile</span><span class="p">);</span>
 </code></pre></div></div>
@@ -414,7 +416,7 @@ Tryb czytania pozwala tylko na odczytanie pliku, nie można do niego pisać.</p>
 
 <p class="text-justify">Deklarujemy strukturę <strong class="blue">trzyNum</strong> zawierającą trzy liczby - <strong class="blue">n1</strong>, <strong class="blue">n2</strong> oraz <strong class="blue">n3</strong>, a następnie definiujemy ją w funkcji <em>main</em> jako <strong class="blue">num</strong>.</p>
 
-<p class="text-justify">Teraz wewnątrz pętli <em>for</em> zapisujemy wartość do pliku za pomocą funkcji <strong class="maroon">fwrite()</strong>.</p>
+<p class="text-justify">Teraz wewnątrz pętli <em>for</em> zapisujemy wartość do pliku za pomocą funkcji <em class="maroon">fwrite()</em>.</p>
 
 <p class="text-justify">Pierwszy parametr przyjmuje adres <strong class="blue">num</strong>, a drugi rozmiar struktury <strong class="blue">trzyNum</strong>.</p>
 
@@ -424,7 +426,7 @@ Tryb czytania pozwala tylko na odczytanie pliku, nie można do niego pisać.</p>
 
 <h4 id="odczyt-pliku-binarnego">Odczyt pliku binarnego</h4>
 
-<p class="text-justify">Do odczytu zawartości pliku binarnego należy użyć funkcji <strong class="blue">fread()</strong>. Funkcja ta przyjmuje analogiczne parametry jak wcześniej opisywana funkcja <strong class="blue">fwrite()</strong>:</p>
+<p class="text-justify">Do odczytu zawartości pliku binarnego należy użyć funkcji <em class="maroon">fread()</em>. Funkcja ta przyjmuje analogiczne parametry jak wcześniej opisywana funkcja <em class="maroon">fwrite()</em>:</p>
 
 <ul>
   <li>addressData - adres danych, które mają zostać zapisane na dysku,</li>
@@ -476,7 +478,7 @@ Tryb czytania pozwala tylko na odczytanie pliku, nie można do niego pisać.</p>
 
 <p class="text-justify">Jeśli masz wiele rekordów wewnątrz pliku i potrzebujesz dostępu do rekordu w określonej pozycji, należy pominąć wszystkie rekordy przed nim, aby znaleźć się w tej określonej pozycji.</p>
 
-<p class="text-justify">Do pominięcia określonej porcji danych można użyć funkcji <strong class="maroon">fseek()</strong>.</p>
+<p class="text-justify">Do pominięcia określonej porcji danych można użyć funkcji <em class="maroon">fseek()</em>.</p>
 
 <h4 id="składnia-fseek">Składnia fseek</h4>
 
@@ -531,13 +533,61 @@ Tryb czytania pozwala tylko na odczytanie pliku, nie można do niego pisać.</p>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p class="text-justify">Funkcja <strong class="maroon">fseek()</strong> może być używana zarówno podczas odczytu jak i zapisu danych w pliku.</p>
+<p class="text-justify">Funkcja <em class="maroon">fseek()</em> może być używana zarówno podczas odczytu jak i zapisu danych w pliku.</p>
+
+<h4 id="przewijanie-na-początek-pliku">Przewijanie na początek pliku</h4>
+
+<p class="text-justify">Czasami zachodzi potrzeba przestawienia wskaźnika pozycji pliku na początek. Do tego celu może być przydatna instrukcja <em class="maroon">rewind()</em>, dzięki temu poleceniu przestawiony zostaje wskaźnik pozycji operacji plikowych na sam początek pliku.</p>
+
+<h2 id="pliki-tymczasowe">Pliki tymczasowe</h2>
+
+<p class="text-justify">Plik tymczasowy, jest rodzajem pliku stworzonym do przechowywania informacji tymczasowo podczas gdy jest potrzebny do wykonania określonego zadania. Po zakończeniu zadania, plik tymczasowy jest zazwyczaj usuwany przez aplikację, która go stworzyła, lub przez system operacyjny.</p>
+
+<p class="text-justify">W języku C dostępna jest funkcja tempfile przydatna do tworzenia plików tymczasowych:</p>
+
+<ul>
+  <li>zdefiniowana została w pliku nagłówkowym <em>stdio.h</em>,</li>
+  <li>plik tymczasowy automatycznie jest usuwany po zakończeniu działania programu,</li>
+  <li>tworzony plik jest otwierany w trybie binarnym do zapisu i odczytu <strong><em>wb+</em></strong>.</li>
+</ul>
+
+<p>Przykładowy program wykorzystujący plik tymczasowy przedstawiony jest poniżej:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
+<span class="p">{</span> 
+   <span class="kt">char</span> <span class="n">str</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"blog.roszczyk.net</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+   <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+
+   <span class="kt">FILE</span><span class="o">*</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmpfile</span><span class="p">();</span> 
+   <span class="k">if</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> 
+   <span class="p">{</span> 
+      <span class="n">printf</span><span class="p">(</span><span class="s">"Nie udało się utworzyć pliku tymczasowego.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> 
+      <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> 
+   <span class="p">}</span> 
+
+   <span class="n">printf</span><span class="p">(</span><span class="s">"Plik tymczasowy został prawidłowo utworzony</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> 
+   <span class="k">while</span> <span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">'\0'</span><span class="p">)</span> 
+   <span class="p">{</span> 
+      <span class="n">fputc</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tmp</span><span class="p">);</span> 
+      <span class="n">i</span><span class="o">++</span><span class="p">;</span> 
+   <span class="p">}</span> 
+
+   <span class="n">rewind</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span> 
+
+   <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+   <span class="k">while</span> <span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="n">fgetc</span><span class="p">(</span><span class="n">tmp</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> 
+      <span class="n">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span> <span class="n">ch</span><span class="p">);</span> 
+<span class="p">}</span> 
+</code></pre></div></div>
 
       <div class="page-footer">
         <div class="page-share">
-          <a href="https://twitter.com/intent/tweet?text=Operacje plikowe w języku C&url=/programowanie/operacje-plikowe-w-jezyku-c/" title="Udostępnij na Twitter" rel="nofollow" target="_blank">Twitter</a>
-          <a href="https://facebook.com/sharer.php?u=/programowanie/operacje-plikowe-w-jezyku-c/" title="Udostępnij na Facebook" rel="nofollow" target="_blank">Facebook</a>
-          <a href="http://www.linkedin.com/shareArticle?mini=true&url=/programowanie/operacje-plikowe-w-jezyku-c/" title="Udostępnij na LinkedIn" rel="nofollow" target="_blank">LinkedIn</a>
+          <a href="https://twitter.com/intent/tweet?text=Operacje plikowe w języku C&url=http://localhost:4000/programowanie/operacje-plikowe-w-jezyku-c/" title="Udostępnij na Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer/sharer.php?u=http://localhost:4000/programowanie/operacje-plikowe-w-jezyku-c/" title="Udostępnij na Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/programowanie/operacje-plikowe-w-jezyku-c/&title=Operacje plikowe w języku C&summary=Systemy informatyczne często wykorzystują pliki do przechowywania danych. Operacje plikowe w języku C pozwalają na użycie zawartości tychże plików w programie komputerowym.
+" title="Udostępnij na LinkedIn" rel="nofollow" target="_blank">LinkedIn</a>
         </div>
         <div class="page-tag">
           
