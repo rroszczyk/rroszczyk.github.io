@@ -36,7 +36,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-gzip
   - jekyll-katex
-#  - jekyll-scholar
+  - jekyll-scholar
 
 paginate: 8
 paginate_path: "/page/:num"
