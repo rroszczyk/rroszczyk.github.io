@@ -10,3 +10,5 @@ gem "jekyll-gzip"
 gem "jekyll-katex"
 gem "jekyll-scholar"
 gem "kramdown-math-katex"
+
+gem "webrick", "~> 1.8"
