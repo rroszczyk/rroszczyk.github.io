@@ -1085,6 +1085,13 @@ background-color: #515151;
   margin: 0 0 10px;
 }
 
+.menu {
+  position: relative;
+  visibility: hidden;
+  bottom: 40px;
+  left: 0;  
+}
+
 .content-box {
   padding: 20px;
   padding-left: 260px;
@@ -1633,6 +1640,24 @@ ul.without-bullet-justify, ul.without-bullet-justify li {
   -webkit-hyphens: auto  
 }
 
+/* Bibliografia (jekyll-scholar: div.bibliography > p.bib-entry) */
+.bibliography {
+  text-align: justify;          /* wyrównanie obustronne */
+  text-justify: inter-word;     /* sugestia dla przeglądarek, gdzie działa */
+  hyphens: auto;                /* ładniejsze justowanie (działa jeśli lang=pl/en) */
+}
+
+.bibliography .bib-entry {
+  margin: 0;                    /* brak wolnego wiersza (usuwa marginesy p) */
+  padding: 0;
+  line-height: 1.35;            /* opcjonalnie: czytelna interlinia */
+}
+
+/* opcjonalnie: mały odstęp tylko gdy wpis łamie się na kilka linii */
+.bibliography .bib-entry + .bib-entry {
+  margin-top: 0;                /* jawnie: zero odstępu między wpisami */
+}
+
 .text-justify, .text-justify-has-drop-cap, .text-justify li {
   text-align: justify;
   hyphens: auto;
@@ -1664,4 +1689,16 @@ strong.blue, em.blue {
   margin: .05em .1em 0 0;
   text-transform: uppercase;
   font-style: normal; 
+}
+
+/* kontener */
+div.mermaid{
+  text-align: center;   /* centruje elementy inline/inline-block, w tym svg */
+}
+
+/* sam SVG wygenerowany przez Mermaid */
+div.mermaid > svg{
+  display: inline-block; /* żeby text-align działało przewidywalnie */
+  max-width: 100%;       /* responsywnie */
+  height: auto;
 }
