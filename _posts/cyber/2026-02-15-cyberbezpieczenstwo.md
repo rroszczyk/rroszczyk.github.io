@@ -1,0 +1,30 @@
+---
+layout: post
+toc: true
+description: >
+    Konfiguracja — czyli co i jak ustawiać żeby praca z Git była wygodniejsza. Krótkie wprowadzenie do podstawowych parametrów konfiguracyjnych.
+#Git posiada długą listę parametrów konfiguracyjnych pozwalających dostosować do swoich potrzeb środowisko pracy, a ten opis zawiera podstawowe parametry konfiguracyjne.
+hide_description: true
+title: MDX test
+internal-title: MDX test
+categories: [programowanie] 
+tags: [c, git]
+languages:
+- pl
+img: cover/git-unsplash.jpg
+ximg: tmb/git-unsplash_x.jpg
+author: rroszczyk
+comments: false
+published: false
+copyright: Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/photos/matrix-movie-still-iar-afB0QQw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+---
+
+In, the snowfall was above average.
+It was followed by a warm spring which caused
+flood conditions in many of the nearby rivers {% cite ZychComparative2022 Markiewicz3D2021 %}, {% cite RoszczykNormal2020 %}.
+
+{% bibliography --cited %}
+
+
+
