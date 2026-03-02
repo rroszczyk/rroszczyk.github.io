@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">  
+	<title>Operacje plikowe w języku C - Radosław Roszczyk</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+    <meta content="Radosław Roszczyk" property="og:site_name">
+  
+    <meta content="Operacje plikowe w języku C" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Systemy informatyczne często wykorzystują pliki do przechowywania danych. Dzięki temu przewodnikowi poznasz obsługę plików w&nbsp;języku&nbsp;C.
+" property="og:description">
+  
+  
+    <meta content="https://blog.roszczyk.net/programowanie/operacje-plikowe-w-jezyku-c/" property="og:url">
+  
+  
+    <meta content="2023-03-12T00:00:00+01:00" property="article:published_time">
+    <meta content="https://blog.roszczyk.net/about/" property="article:author">
+  
+  
+    <meta content="https://blog.roszczyk.net/img/cover/files-min.png" property="og:image">
+  
+  
+    
+    <meta content="programowanie" property="article:section">
+    
+  
+  
+    
+    <meta content="c" property="article:tag">
+    
+    <meta content="pliki" property="article:tag">
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@rroszczyk">
+  
+    <meta name="twitter:title" content="Operacje plikowe w języku C">
+  
+  
+    <meta name="twitter:url" content="https://blog.roszczyk.net/programowanie/operacje-plikowe-w-jezyku-c/">
+  
+  
+    <meta name="twitter:description" content="Systemy informatyczne często wykorzystują pliki do przechowywania danych. Dzięki temu przewodnikowi poznasz obsługę plików w&nbsp;języku&nbsp;C.
+">
+  
+  
+    <meta name="twitter:image:src" content="https://blog.roszczyk.net/img/cover/files-min.png">
+  
+
+	<meta name="description" content="Systemy informatyczne często wykorzystują pliki do przechowywania danych. Dzięki temu przewodnikowi poznasz obsługę plików w&nbsp;języku&nbsp;C.
+">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="https://blog.roszczyk.net/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="https://blog.roszczyk.net/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://blog.roszczyk.net/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="https://blog.roszczyk.net/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Lato:300,400,700&display=swap" rel="stylesheet">
+	<!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f7285abe6b.js" crossorigin="anonymous"></script>
+	<!-- Styles -->
+	<link rel="stylesheet" href="https://blog.roszczyk.net/css/main.css">
+  <!-- Katex -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+  <!-- Mermaid -->
+  
+  
+  
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/img/radoslaw_roszczyk_192.jpg" alt="Radosław Roszczyk"></a>
+      </div>
+      <div class="author-name">Radosław Roszczyk</div>
+      <p>notatki, materiały, oraz inne przydatne rzeczy</p>
+    </div>
+  </header> <!-- End Header -->
+  <main>
+  <!-- Menu -->    
+      <div class="menu">
+      <p>MENU</p>
+      
+      <a href="/" alt="Blog">Blog</a><br>      
+      
+      <a href="/projekty/" alt="Projekty">Projekty</a><br>      
+      
+      <a href="/dydaktyka/" alt="Dydaktyka">Dydaktyka</a><br>      
+      
+    </div>      
+  </main>
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Kontakt</h3>
+                                
+      <ul>
+        
+          <li><a href="https://twitter.com/rroszczyk" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+        
+          <li class="github"><a href="https://github.com/rroszczyk" target="_blank"><i class="fab fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/in/rroszczyk" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        
+        
+          <!-- <li class="email"><a href="mailto:example.david@blog.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>-->
+          <li><a href="https://go.roszczyk.net/pw-pl" target="_blank"><i class="fa fa-university" aria-hidden="true"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2026 &copy; Radosław Roszczyk</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src=/img/cover/files-min.png alt="Operacje plikowe w&nbsp;języku C">
+        
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        
+        <h1 class="page-title">Operacje plikowe w&nbsp;języku C</h1>
+                
+        <!-- <div class="page-date"><span>2023, Mar 12&nbsp;&nbsp;&nbsp;&nbsp;</span></div> -->
+        <div class="page-date"><span>
+          
+          12
+          Marzec
+            
+          2023           
+        </span></div>        
+      </header>
+      <p class="text-justify-has-drop-cap">Dzięki temu przewodnikowi poznasz obsługę plików w języku C. Niniejszy dokument pokazuje jak obsługiwać standardowe wejście / wyjście używając bazowych instrukcji języka C - <em class="maroon">fprintf()</em>, <em class="maroon">fscanf()</em>, <em class="maroon">fread()</em>, <em class="maroon">fwrite()</em>, <em class="maroon">fseek()</em>, <em class="maroon">tmpfile()</em> itp. Dodatkowo znajdują się tu opisy trybów w&nbsp;jakich można otworzyć plik z&nbsp;poziomu języka C.</p>
+
+<!--more-->
+
+<h2 id="typy-plików">Typy plików</h2>
+
+<p>Mając do czynienia z&nbsp;plikami, należy wiedzieć o&nbsp;dwóch ich rodzajach:</p>
+
+<ul>
+  <li>pliki tekstowe,</li>
+  <li>pliki binarne.</li>
+</ul>
+
+<p class="text-justify">Obydwa rodzaje plików nieco różną się od siebie z&nbsp;punktu widzenia zawartości oraz sposobu obsługi. Każdemu z&nbsp;nich są dedykowane nieco inne funkcje.</p>
+
+<h3 id="pliki-tekstowe">Pliki tekstowe</h3>
+
+<p class="text-justify">Pliki tekstowe to zwykłe pliki zawierające dane tekstowe. Najczęściej mają rozszerzenie <em>.txt</em>. Możesz łatwo tworzyć pliki tekstowe za pomocą dowolnego prostego edytora tekstu. Plik tekstowy jest szczególną wersją pliku binarnego.</p>
+
+<p class="text-justify">Kiedy otworzysz tego typu pliki, zobaczysz całą zawartość w&nbsp;pliku jako zwykły tekst. Pliki te można prosto zmieniać i edytować. Wymagają one minimalnego wysiłku w utrzymaniu, są łatwe do odczytania, jednakże zapewniają najmniejsze bezpieczeństwo i zajmują więcej miejsca na dysku.</p>
+
+<h3 id="pliki-binarne">Pliki binarne</h3>
+
+<p class="text-justify">Pliki binarne to najczęściej pliki zawierające dane binarne. Zwyczajowo mają różne rozszerzenia, zależnie od danych jake są w&nbsp;nich przechowywane oraz jaki program je utworzył. Programy zazyczaj zamiast przechowywać dane w&nbsp;postaci zwykłego tekstu, przechowują je w postaci binarnej. Pliki binarne mogą pomieścić większą ilość danych, są dużo trudniejsze do odczytania i mogą zapewnić dużo lepsze bezpieczeństwo niż pliki tekstowe.</p>
+
+<h2 id="operacje-na-plikach">Operacje na plikach</h2>
+
+<p>W języku C można wykonywać cztery główne operacje na plikach, zarówno tekstowych jak i binarnych:</p>
+
+<ul>
+  <li>tworzenie nowego pliku,</li>
+  <li>otwieranie istniejącego pliku,</li>
+  <li>zamykanie pliku,</li>
+  <li>odczyt z&nbsp;i&nbsp;zapis informacji do pliku.</li>
+</ul>
+
+<h3 id="uchwyt-pliku">Uchwyt pliku</h3>
+
+<p class="text-justify">Podczas pracy z plikami należy zadeklarować wskaźnik typu <strong class="blue">FILE</strong>. Zmienna <strong class="blue">fptr</strong> zdeklarowana w ten sposób stanowi uchwyt pliku, który jest wykorzystywany do komunikacji między systemem operacyjnym, a programem.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">FILE</span><span class="o">*</span> <span class="n">fptr</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="otwieranie-pliku-do-odczytu-oraz-zapisu">Otwieranie pliku do odczytu oraz zapisu</h3>
+
+<p>Otwieranie pliku odbywa się za pomocą funkcji <em class="maroon">fopen()</em> zdefiniowanej w pliku nagłówkowym <em>stdio.h</em>.</p>
+
+<p>Składnia otwarcia pliku dla standardowego wejścia / wyjścia to:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ptr</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"plik_do_otwarcia"</span><span class="p">,</span> <span class="s">"mode"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>przykładowo:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fopen</span><span class="p">(</span><span class="s">"nazwa_pliku.txt"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">);</span>
+
+<span class="n">fopen</span><span class="p">(</span><span class="s">"nazwa_pliku.bin"</span><span class="p">,</span> <span class="s">"rb"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p class="text-justify">Załóżmy, że plik nazwa_pliku.txt nie istnieje. Pierwsza funkcja tworzy nowy plik o nazwie nazwa_pliku.txt i otwiera go do zapisu zgodnie z trybem ‘w’.
+Tryb pisania pozwala na tworzenie i edycję (nadpisywanie) zawartości pliku.</p>
+
+<p class="text-justify">Załóżmy teraz, że drugi plik binarny nazwa_pliku.bin istnieje. Druga funkcja otwiera istniejący plik do odczytu w trybie binarnym ‘rb’.
+Tryb czytania pozwala tylko na odczytanie pliku, nie można do niego pisać.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  Tryb  </th>
+      <th>  Funkcja trybu</th>
+      <th>  Uwagi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>r</strong></td>
+      <td>Otwarcie do odczytu</td>
+      <td>Jeśli plik nie istnieje, funkcja fopen() zwraca NULL.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>rb</strong></td>
+      <td>Otwarcie do odczytu w&nbsp;trybie binarnym</td>
+      <td>Jeśli plik nie istnieje, funkcja fopen() zwraca NULL.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>w</strong></td>
+      <td>Otwarcie do zapisu</td>
+      <td>Jeśli plik istnieje to zostanie nadpisany, jeśli plik nie istnieje to zostanie utworzony.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>wb</strong></td>
+      <td>Otwarcie do zapisu w&nbsp;trybie binarnym</td>
+      <td>Jeśli plik istnieje to zostanie nadpisany, jeśli plik nie istnieje to zostanie utworzony.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>a</strong></td>
+      <td>Otwiera plik w&nbsp;trybie dodawania danych. Dane są dopisywane na końcu pliku.</td>
+      <td>Jeśli plik nie istnieje to zostanie utworzony.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>ab</strong></td>
+      <td>Otwiera plik w&nbsp;trybie dodawania danych. Dane są dopisywane na końcu pliku.</td>
+      <td>Jeśli plik nie istnieje to zostanie utworzony.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>r+</strong></td>
+      <td>Otwiera plik do odczytu i&nbsp;zapisu.</td>
+      <td>Jeśli plik nie istnieje, funkcja fopen() zwraca NULL.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>rb+</strong></td>
+      <td>Otwiera plik do odczytu i&nbsp;zapisu w&nbsp;trybie binarnym.</td>
+      <td>Jeśli plik nie istnieje, funkcja fopen() zwraca NULL.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>w+</strong></td>
+      <td>Otwiera plik do zapisu i&nbsp;odczytu.</td>
+      <td>Jeśli plik istnieje to zostanie nadpisany, jeśli plik nie istnieje to zostanie utworzony.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>wb+</strong></td>
+      <td>Otwiera plik do zapisu i&nbsp;odczytu w&nbsp;trybie binarnym.</td>
+      <td>Jeśli plik istnieje to zostanie nadpisany, jeśli plik nie istnieje to zostanie utworzony.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>a+</strong></td>
+      <td>Otwiera plik w&nbsp;trybie dodawania danych oraz odczytu.</td>
+      <td>Jeśli plik nie istnieje to zostanie utworzony.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>ab+</strong></td>
+      <td>Otwiera plik w&nbsp;trybie dodawania danych oraz odczytu w&nbsp;trybie binarnym</td>
+      <td>Jeśli plik nie istnieje to zostanie utworzony.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="odczyt-i-zapis-plików-tekstowych">Odczyt i&nbsp;zapis plików tekstowych</h4>
+
+<p>Do odczytu i zapisu do pliku tekstowego używamy funkcji <em class="maroon">fprintf()</em> oraz <em class="maroon">fscanf()</em>.</p>
+
+<p class="text-justify">Są one po prostu plikowymi odpowiednikami funkcji <em class="maroon">printf()</em> oraz <em class="maroon">scanf()</em>. Jedyna różnica polega na tym, że <em class="maroon">fprintf()</em> oraz <em class="maroon">fscanf()</em> wymagają podania wskaźnika do struktury <strong class="blue">FILE</strong>.</p>
+
+<h5 id="przykład-1-zapis-do-pliku-tekstowego">Przykład 1: zapis do pliku tekstowego</h5>
+
+<p class="text-justify">Poniższy program pobiera od użytkownika liczbę i zapisuje w&nbsp;pliku <em>plik.txt</em>.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+   <span class="kt">FILE</span> <span class="o">*</span><span class="n">fptr</span><span class="p">;</span>
+
+   <span class="c1">// zamiast nazwy plik.txt można użyć innej wraz ze ścieżką dostępu</span>
+   <span class="n">fptr</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"plik.txt"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">);</span>
+
+   <span class="k">if</span><span class="p">(</span><span class="n">fptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">printf</span><span class="p">(</span><span class="s">"Błąd!"</span><span class="p">);</span>   
+      <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>             
+   <span class="p">}</span>
+
+   <span class="n">printf</span><span class="p">(</span><span class="s">"Podaj liczbę: "</span><span class="p">);</span>
+   <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">);</span>
+
+   <span class="n">fprintf</span><span class="p">(</span><span class="n">fptr</span><span class="p">,</span> <span class="s">"%d"</span><span class="p">,</span> <span class="n">num</span><span class="p">);</span>
+   <span class="n">fclose</span><span class="p">(</span><span class="n">fptr</span><span class="p">);</span>
+
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="text-justify">Po skompilowaniu i uruchomieniu powyższego programu można zobaczyć plik tekstowy o nazwie <em>plik.txt</em> utworzony w katalogu w którym został uruchomiony program. Po otwarciu tego pliku widać liczbę wpisaną przez użytkownika zapisaną w&nbsp;postaci tekstu.</p>
+
+<h5 id="przykład-2-odczyt-z-pliku-tekstowego">Przykład 2: odczyt z&nbsp;pliku tekstowego</h5>
+
+<p class="text-justify">Poniższy program otwiera wcześniej utworzony plik o nazwie <em>plik.txt</em> i wczytuje z niego zapisaną liczbę.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+   <span class="kt">FILE</span> <span class="o">*</span><span class="n">fptr</span><span class="p">;</span>
+
+   <span class="k">if</span> <span class="p">((</span><span class="n">fptr</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"plik.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+       <span class="n">printf</span><span class="p">(</span><span class="s">"Błąd otwarcia pliku!"</span><span class="p">);</span>
+
+       <span class="c1">// Koniec działania - zwracamy błąd numer 1</span>
+       <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="n">fscanf</span><span class="p">(</span><span class="n">fptr</span><span class="p">,</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">);</span>
+
+   <span class="n">printf</span><span class="p">(</span><span class="s">"Liczba wczytana z&nbsp;pliku to: %d"</span><span class="p">,</span> <span class="n">num</span><span class="p">);</span>
+   <span class="n">fclose</span><span class="p">(</span><span class="n">fptr</span><span class="p">);</span> 
+  
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="text-justify">Powyższy program odczytuje liczbę całkowitą znajdującą się w&nbsp;pliku <em>plik.txt</em>, a&nbsp;następnie wypisuje ją na ekranie.</p>
+
+<p class="text-justify">Jeśli udało się stworzyć plik przy użyciu programu z&nbsp;przykładu 1, to uruchomienie tego programu da liczbę całkowitą, wcześniej którą wprowadziłeś.</p>
+
+<p class="text-justify">W podobny sposób można wykorzystać inne funkcje do wczytywania danych z&nbsp;pliku, takie jak <em class="maroon">fgetchar()</em>, <em class="maroon">fputc()</em> itp.</p>
+
+<h3 id="odczyt-i-zapis-plików-binarnych">Odczyt i&nbsp;zapis plików binarnych</h3>
+
+<p class="text-justify">Do zapisu oraz odczytu z&nbsp;dysku plików binarnych stosuje się odpowiednio instrukcję <em class="maroon">fread()</em> oraz <em class="maroon">fwrite()</em>.</p>
+
+<h4 id="zapis-do-pliku-binarnego">Zapis do pliku binarnego</h4>
+<p class="text-justify">Aby zapisać do pliku binarnego, należy użyć funkcji <em class="maroon">fwrite()</em>. Funkcje przyjmują cztery argumenty:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fwrite</span><span class="p">(</span><span class="n">addressData</span><span class="p">,</span> <span class="n">sizeData</span><span class="p">,</span> <span class="n">numbersData</span><span class="p">,</span> <span class="n">pointerToFile</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>addressData - adres danych, które mają zostać zapisane na dysku,</li>
+  <li>sizeData - rozmiar pojedynczego elementu danych, które mają być zapisane na dysku,</li>
+  <li>numbersData - liczbę elementów, które mają zostać zapisane na dysku,</li>
+  <li>pointerToFile - wskaźnik do pliku, w&nbsp;którym chcemy dokonać zapisu.</li>
+</ul>
+
+<h5 id="przykład-3-zapis-pliku-binarnego">Przykład 3: zapis pliku binarnego</h5>
+
+<p class="text-justify">Ten program tworzy nowy plik o&nbsp;nazwie <em>plik.bin</em> na dysku w&nbsp;katalogu w&nbsp;którym został uruchomiony program.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span>
+<span class="k">struct</span> <span class="n">threeNum</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">n3</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+   <span class="k">struct</span> <span class="n">threeNum</span> <span class="n">num</span><span class="p">;</span>
+   <span class="kt">FILE</span> <span class="o">*</span><span class="n">fptr</span><span class="p">;</span>
+
+   <span class="k">if</span> <span class="p">((</span><span class="n">fptr</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"plik.bin"</span><span class="p">,</span> <span class="s">"wb"</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+       <span class="n">printf</span><span class="p">(</span><span class="s">"Błąd otwarcia pliku!"</span><span class="p">);</span>
+
+       <span class="c1">// plik istnieje jeśli zwracana wartość jest różna od NULL</span>
+       <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">num</span><span class="p">.</span><span class="n">n1</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+      <span class="n">num</span><span class="p">.</span><span class="n">n2</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">i</span><span class="p">;</span>
+      <span class="n">num</span><span class="p">.</span><span class="n">n3</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">num</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">threeNum</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fptr</span><span class="p">);</span> 
+   <span class="p">}</span>
+   <span class="n">fclose</span><span class="p">(</span><span class="n">fptr</span><span class="p">);</span> 
+  
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="text-justify">Deklarujemy strukturę <strong class="blue">trzyNum</strong> zawierającą trzy liczby - <strong class="blue">n1</strong>, <strong class="blue">n2</strong> oraz <strong class="blue">n3</strong>, a&nbsp;następnie definiujemy ją w&nbsp;funkcji <em>main</em> jako <strong class="blue">num</strong>.</p>
+
+<p class="text-justify">Teraz wewnątrz pętli <em>for</em> zapisujemy wartość do pliku za pomocą funkcji <em class="maroon">fwrite()</em>.</p>
+
+<p class="text-justify">Pierwszy parametr przyjmuje adres <strong class="blue">num</strong>, a&nbsp;drugi rozmiar struktury <strong class="blue">trzyNum</strong>.</p>
+
+<p class="text-justify">Ponieważ wstawiamy tylko jedną instancję <strong class="blue">num</strong>, trzeci parametr wynosi 1. Ostatni parametr <strong class="blue">fptr</strong> wskazuje na plik, w&nbsp;którym przechowujemy dane.</p>
+
+<p class="text-justify">Na koniec zamykamy plik.</p>
+
+<h4 id="odczyt-pliku-binarnego">Odczyt pliku binarnego</h4>
+
+<p class="text-justify">Do odczytu zawartości pliku binarnego należy użyć funkcji <em class="maroon">fread()</em>. Funkcja ta przyjmuje analogiczne parametry jak wcześniej opisywana funkcja <em class="maroon">fwrite()</em>:</p>
+
+<ul>
+  <li>addressData - adres danych, które mają zostać zapisane na dysku,</li>
+  <li>sizeData - rozmiar pojedynczego elementu danych, które mają być zapisane na dysku,</li>
+  <li>numbersData - liczbę elementów, które mają zostać zapisane na dysku,</li>
+  <li>pointerToFile - wskaźnik do pliku, w&nbsp;którym chcemy dokonać zapisu.</li>
+</ul>
+
+<h5 id="przykład-4-odczyt-dany-z-pliku-binarnego">Przykład 4: odczyt dany z&nbsp;pliku binarnego</h5>
+
+<p class="text-justify">Poniższy program wczytuje dane z&nbsp;pliku plik.bin i&nbsp;wyświetla je na ekranie.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span>
+<span class="k">struct</span> <span class="n">threeNum</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">n3</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+   <span class="k">struct</span> <span class="n">threeNum</span> <span class="n">num</span><span class="p">;</span>
+   <span class="kt">FILE</span> <span class="o">*</span><span class="n">fptr</span><span class="p">;</span>
+
+   <span class="k">if</span> <span class="p">((</span><span class="n">fptr</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"plik.bin"</span><span class="p">,</span><span class="s">"rb"</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+       <span class="n">printf</span><span class="p">(</span><span class="s">"Błąd otwarcia pliku!"</span><span class="p">);</span>
+
+       <span class="c1">// plik istnieje jeśli zwracana wartość jest różna od NULL</span>
+       <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">fread</span><span class="p">(</span><span class="o">&amp;</span><span class="n">num</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">threeNum</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fptr</span><span class="p">);</span> 
+      <span class="n">printf</span><span class="p">(</span><span class="s">"n1: %d</span><span class="se">\t</span><span class="s">n2: %d</span><span class="se">\t</span><span class="s">n3: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">num</span><span class="p">.</span><span class="n">n1</span><span class="p">,</span> <span class="n">num</span><span class="p">.</span><span class="n">n2</span><span class="p">,</span> <span class="n">num</span><span class="p">.</span><span class="n">n3</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="n">fclose</span><span class="p">(</span><span class="n">fptr</span><span class="p">);</span> 
+  
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="text-justify">W uproszczeniu, czytasz jeden rekord o&nbsp;rozmiarze <strong class="blue">threeNum</strong> z&nbsp;pliku wskazywanego przez <strong class="blue">fptr</strong> do struktury <strong class="blue">num</strong>.</p>
+
+<p class="text-justify">Po uruchomieniu tego programu otrzymasz te same rekordy, które zostały wstawione w&nbsp;przykładzie 3.</p>
+
+<h3 id="pobieranie-danych-z-wybranego-miejsca-pliku">Pobieranie danych z&nbsp;wybranego miejsca pliku</h3>
+
+<p class="text-justify">Jeśli masz wiele rekordów wewnątrz pliku i&nbsp;potrzebujesz dostępu do rekordu w&nbsp;określonej pozycji, należy pominąć wszystkie rekordy przed nim, aby znaleźć się w&nbsp;tej określonej pozycji.</p>
+
+<p class="text-justify">Do pominięcia określonej porcji danych można użyć funkcji <em class="maroon">fseek()</em>.</p>
+
+<h4 id="składnia-fseek">Składnia fseek</h4>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fseek</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">fptr</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">offset</span><span class="p">,</span> <span class="kt">int</span> <span class="n">whence</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p class="text-justify">Pierwszy parametr <strong class="blue">fptr</strong> jest wskaźnikiem do pliku. Drugi parametr to pozycja rekordu, który ma zostać odnaleziony, a trzeci parametr określa miejsce, w którym rozpoczyna się offset. Parametr whence może przyjąć jedną z trzech wartości:</p>
+
+<ul>
+  <li>SEEK_SET - rozpoczyna przesunięcie od początku pliku,</li>
+  <li>SEEK_END - rozpoczyna przesunięcie od końca pliku,</li>
+  <li>SEEK_CUR - rozpoczyna przesunięcie od aktualnego położenia kursora w&nbsp;pliku.</li>
+</ul>
+
+<h4 id="użycie-fseek">Użycie fseek</h4>
+
+<p class="text-justify">Ten program zacznie czytać rekordy z pliku plik.bin w odwrotnej kolejności (od ostatniego do pierwszego), a następnie wypisze je na ekranie.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span>
+<span class="k">struct</span> <span class="n">threeNum</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">n3</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+   <span class="k">struct</span> <span class="n">threeNum</span> <span class="n">num</span><span class="p">;</span>
+   <span class="kt">FILE</span> <span class="o">*</span><span class="n">fptr</span><span class="p">;</span>
+
+   <span class="k">if</span> <span class="p">((</span><span class="n">fptr</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"plik.bin"</span><span class="p">,</span><span class="s">"rb"</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+       <span class="n">printf</span><span class="p">(</span><span class="s">"Błąd otwarcia pliku!"</span><span class="p">);</span>
+
+       <span class="c1">// plik istnieje jeśli zwracana wartość jest różna od NULL</span>
+       <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+   <span class="p">}</span>
+   
+   <span class="c1">// przesuń kursor na koniec pliku</span>
+   <span class="n">fseek</span><span class="p">(</span><span class="n">fptr</span><span class="p">,</span> <span class="o">-</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">threeNum</span><span class="p">),</span> <span class="n">SEEK_END</span><span class="p">);</span>
+
+   <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">fread</span><span class="p">(</span><span class="o">&amp;</span><span class="n">num</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">threeNum</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fptr</span><span class="p">);</span> 
+      <span class="n">printf</span><span class="p">(</span><span class="s">"n1: %d</span><span class="se">\t</span><span class="s">n2: %d</span><span class="se">\t</span><span class="s">n3: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">num</span><span class="p">.</span><span class="n">n1</span><span class="p">,</span> <span class="n">num</span><span class="p">.</span><span class="n">n2</span><span class="p">,</span> <span class="n">num</span><span class="p">.</span><span class="n">n3</span><span class="p">);</span>
+      <span class="n">fseek</span><span class="p">(</span><span class="n">fptr</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">threeNum</span><span class="p">),</span> <span class="n">SEEK_CUR</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="n">fclose</span><span class="p">(</span><span class="n">fptr</span><span class="p">);</span> 
+  
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="text-justify">Funkcja <em class="maroon">fseek()</em> może być używana zarówno podczas odczytu jak i&nbsp;zapisu danych w&nbsp;pliku.</p>
+
+<h4 id="przewijanie-na-początek-pliku">Przewijanie na początek pliku</h4>
+
+<p class="text-justify">Czasami zachodzi potrzeba przestawienia wskaźnika pozycji pliku na początek. Do tego celu może być przydatna instrukcja <em class="maroon">rewind()</em>, dzięki temu poleceniu przestawiony zostaje wskaźnik pozycji operacji plikowych na sam początek pliku.</p>
+
+<h2 id="pliki-tymczasowe">Pliki tymczasowe</h2>
+
+<p class="text-justify">Plik tymczasowy, jest rodzajem pliku stworzonym do przechowywania informacji tymczasowo podczas gdy są one potrzebne do wykonania określonego zadania. Po zakończeniu zadania, plik tymczasowy jest zazwyczaj usuwany przez aplikację, która go stworzyła, lub przez system operacyjny.</p>
+
+<p class="text-justify">W języku C dostępna jest funkcja tempfile przydatna do tworzenia plików tymczasowych:</p>
+
+<ul>
+  <li>zdefiniowana została w&nbsp;pliku nagłówkowym <em>stdio.h</em>,</li>
+  <li>plik tymczasowy automatycznie jest usuwany po zakończeniu działania programu,</li>
+  <li>tworzony plik jest otwierany w&nbsp;trybie binarnym do zapisu i&nbsp;odczytu <strong><em>wb+</em></strong>.</li>
+</ul>
+
+<p>Przykładowy program wykorzystujący plik tymczasowy przedstawiony jest poniżej:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
+<span class="p">{</span> 
+   <span class="kt">char</span> <span class="n">str</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"blog.roszczyk.net</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+   <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+
+   <span class="kt">FILE</span><span class="o">*</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmpfile</span><span class="p">();</span> 
+   <span class="k">if</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> 
+   <span class="p">{</span> 
+      <span class="n">printf</span><span class="p">(</span><span class="s">"Nie udało się utworzyć pliku tymczasowego.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> 
+      <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> 
+   <span class="p">}</span> 
+
+   <span class="n">printf</span><span class="p">(</span><span class="s">"Plik tymczasowy został prawidłowo utworzony</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> 
+   <span class="k">while</span> <span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">'\0'</span><span class="p">)</span> 
+   <span class="p">{</span> 
+      <span class="n">fputc</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tmp</span><span class="p">);</span> 
+      <span class="n">i</span><span class="o">++</span><span class="p">;</span> 
+   <span class="p">}</span> 
+
+   <span class="n">rewind</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span> 
+
+   <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+   <span class="k">while</span> <span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="n">fgetc</span><span class="p">(</span><span class="n">tmp</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> 
+      <span class="n">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span> <span class="n">ch</span><span class="p">);</span> 
+<span class="p">}</span> 
+</code></pre></div></div>
+
+<p class="text-justify">Pliki tymczasowe zazwyczaj znajdują się w&nbsp;specjalnych folderach przeznaczonych dla nich przez system operacyjny, takich jak <em class="blue">/tmp</em> w systemach Unix i Linux, lub folder <em class="blue">Temp</em> w systemie Windows. Choć są one z założenia tymczasowe, niektóre pliki mogą pozostać na dysku, jeśli proces, który miał je usunąć, zostanie nieoczekiwanie przerwany. W systemach Unixowych pliki te mogą zostać później usunięte przez specjalny mechanizm czyszczenia katalogów zawierających tego typu pliki.</p>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Operacje plikowe w&nbsp;języku C&url=https://blog.roszczyk.net/programowanie/operacje-plikowe-w-jezyku-c/" title="Udostępnij na Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer/sharer.php?u=https://blog.roszczyk.net/programowanie/operacje-plikowe-w-jezyku-c/" title="Udostępnij na Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://blog.roszczyk.net/programowanie/operacje-plikowe-w-jezyku-c/&title=Operacje plikowe w&nbsp;języku C&summary=Systemy informatyczne często wykorzystują pliki do przechowywania danych. Dzięki temu przewodnikowi poznasz obsługę plików w&nbsp;języku&nbsp;C.
+" title="Udostępnij na LinkedIn" rel="nofollow" target="_blank">LinkedIn</a>
+        </div>
+        <div class="page-tag">
+          
+            
+            <a href="/programowanie" class="tag">&#35; programowanie</a>
+          
+          
+                        
+            
+            <!-- <a href="/tags/c" class="tag">&#35; c</a> -->
+                                
+            <a href="/tags#c" class="tag">&#35; c</a>
+                    
+          
+                        
+            
+            <!-- <a href="/tags/pliki" class="tag">&#35; pliki</a> -->
+                                
+            <a href="/tags#pliki" class="tag">&#35; pliki</a>
+                    
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+      
+        <div class="copyright">Cover Image Photo by <a href="https://unsplash.com/@qwitka?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Maksym Kaharlytskyi</a> on <a href="https://unsplash.com/photos/Q9y3LRuuxmg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></div>
+      
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J283Z0BLK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J283Z0BLK');
+</script>
+
+<!-- StatCounter code for Radoslaw Roszczyk Blog (blog.roszczyk.net) -->
+<script>
+  var sc_project = 12105020;
+  var sc_invisible = 0;
+  var sc_security = "087cd796";
+</script>
+<script async src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript>
+  <div class="statcounter">
+    <a title="Web Analytics" href="https://statcounter.com/" target="_blank" rel="noopener noreferrer">
+      <img class="statcounter"
+           src="https://c.statcounter.com/12105020/0/087cd796/0/"
+           alt="Web Analytics"
+           referrerpolicy="no-referrer-when-downgrade">
+    </a>
+  </div>
+</noscript>
+<!-- End StatCounter Code -->
+
+</body>
+</html>

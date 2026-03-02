@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">  
+	<title>SI w pisaniu pracy dyplomowej - Radosław Roszczyk</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+    <meta content="Radosław Roszczyk" property="og:site_name">
+  
+    <meta content="SI w pisaniu pracy dyplomowej" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Kompleksowy, praktyczny i zgodny z rekomendacjami Politechniki Warszawskiej przewodnik po możliwościach, ograniczeniach i etyce użycia generatywnej sztucznej inteligencji w pracy dyplomowej: od konspektu, przez literaturę i kod, po oświadczenie i listy kontrolne." property="og:description">
+  
+  
+    <meta content="https://blog.roszczyk.net/dydaktyka/si-w-pisaniu-pracy-dyplomowej/" property="og:url">
+  
+  
+    <meta content="2026-03-01T00:00:00+01:00" property="article:published_time">
+    <meta content="https://blog.roszczyk.net/about/" property="article:author">
+  
+  
+    <meta content="https://blog.roszczyk.net/img/si/rabbit.webp" property="og:image">
+  
+  
+    
+    <meta content="dydaktyka" property="article:section">
+    
+  
+  
+    
+    <meta content="praca dyplomowa" property="article:tag">
+    
+    <meta content="studia" property="article:tag">
+    
+    <meta content="SI" property="article:tag">
+    
+    <meta content="etyka" property="article:tag">
+    
+    <meta content="AI" property="article:tag">
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@rroszczyk">
+  
+    <meta name="twitter:title" content="SI w pisaniu pracy dyplomowej">
+  
+  
+    <meta name="twitter:url" content="https://blog.roszczyk.net/dydaktyka/si-w-pisaniu-pracy-dyplomowej/">
+  
+  
+    <meta name="twitter:description" content="Kompleksowy, praktyczny i zgodny z rekomendacjami Politechniki Warszawskiej przewodnik po możliwościach, ograniczeniach i etyce użycia generatywnej sztucznej inteligencji w pracy dyplomowej: od konspektu, przez literaturę i kod, po oświadczenie i listy kontrolne.">
+  
+  
+    <meta name="twitter:image:src" content="https://blog.roszczyk.net/img/si/rabbit.webp">
+  
+
+	<meta name="description" content="Kompleksowy, praktyczny i zgodny z rekomendacjami Politechniki Warszawskiej przewodnik po możliwościach, ograniczeniach i etyce użycia generatywnej sztucznej inteligencji w pracy dyplomowej: od konspektu, przez literaturę i kod, po oświadczenie i listy kontrolne.">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="https://blog.roszczyk.net/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="https://blog.roszczyk.net/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://blog.roszczyk.net/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="https://blog.roszczyk.net/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Lato:300,400,700&display=swap" rel="stylesheet">
+	<!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f7285abe6b.js" crossorigin="anonymous"></script>
+	<!-- Styles -->
+	<link rel="stylesheet" href="https://blog.roszczyk.net/css/main.css">
+  <!-- Katex -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+  <!-- Mermaid -->
+  
+  
+  
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.12.0/mermaid.min.js" integrity="sha512-5TKaYvhenABhlGIKSxAWLFJBZCSQw7HTV7aL1dJcBokM/+3PNtfgJFlv8E6Us/B1VMlQ4u8sPzjudL9TEQ06ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/img/radoslaw_roszczyk_192.jpg" alt="Radosław Roszczyk"></a>
+      </div>
+      <div class="author-name">Radosław Roszczyk</div>
+      <p>notatki, materiały, oraz inne przydatne rzeczy</p>
+    </div>
+  </header> <!-- End Header -->
+  <main>
+  <!-- Menu -->    
+      <div class="menu">
+      <p>MENU</p>
+      
+      <a href="/" alt="Blog">Blog</a><br>      
+      
+      <a href="/projekty/" alt="Projekty">Projekty</a><br>      
+      
+      <a href="/dydaktyka/" alt="Dydaktyka">Dydaktyka</a><br>      
+      
+    </div>      
+  </main>
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Kontakt</h3>
+                                
+      <ul>
+        
+          <li><a href="https://twitter.com/rroszczyk" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+        
+          <li class="github"><a href="https://github.com/rroszczyk" target="_blank"><i class="fab fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/in/rroszczyk" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        
+        
+          <!-- <li class="email"><a href="mailto:example.david@blog.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>-->
+          <li><a href="https://go.roszczyk.net/pw-pl" target="_blank"><i class="fa fa-university" aria-hidden="true"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2026 &copy; Radosław Roszczyk</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src=/img/si/rabbit.webp alt="SI w&nbsp;pisaniu pracy dyplomowej">
+        
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+                
+        <h1 class="page-title">Sztuczna Inteligencja w&nbsp;pisaniu pracy dyplomowej - przewodnik</h1>
+                
+        <!-- <div class="page-date"><span>2026, Mar 01&nbsp;&nbsp;&nbsp;&nbsp;</span></div> -->
+        <div class="page-date"><span>
+          
+          1
+          Marzec
+            
+          2026           
+        </span></div>        
+      </header>
+      <p class="text-justify-has-drop-cap">Sztuczna Inteligencja może realnie skrócić czas pracy nad pracą dyplomową, ale nie może jej “napisać za Ciebie”. W&nbsp;<strong>Politechnice Warszawskiej</strong> obowiązuje logika: <strong>Ty odpowiadasz za treść</strong>, <strong>weryfikujesz</strong>, <strong>nie podajesz danych osobowych w&nbsp;promptach</strong>, a&nbsp;<strong>materiały wytworzone przez generatywną sztuczną inteligencję muszą być wyraźnie oznaczone</strong>. 
+Ten wpis pokazuje, jak zrobić to mądrze: <em>przepływ pracy, wersjonowanie, prompty, wyjaśnienia, listy kontrolne, pułapki</em>.</p>
+
+<h2 id="dlaczego-w-ogóle-rozważać-użycie-si-w-pracy-dyplomowej">Dlaczego w&nbsp;ogóle rozważać użycie SI w&nbsp;pracy dyplomowej?</h2>
+
+<p class="text-justify">W praktyce pisania pracy dyplomowej SI najczęściej “kupuje” czas: zdejmując z&nbsp;barków żmudne zadania (redakcja, porządkowanie literatury, sanity-check kodu, dopinanie bibliografii), uwalnia zasoby na to, co <em>jest oceniane</em>: problem, metodologia, eksperyment, krytyczna analiza i&nbsp;jakość wniosków. W&nbsp;realnej pracy ten “zysk” zwykle materializuje się w&nbsp;trzech obszarach:</p>
+
+<ol>
+  <li><strong>Wybór i&nbsp;doprecyzowanie problemu</strong> (szukanie niszy, metryk, kryteriów sukcesu).</li>
+  <li><strong>Implementacja i&nbsp;eksperymenty</strong> (szkielety kodu, testy, refaktoryzacja, wyjaśnianie błędów, generowanie wariantów).</li>
+  <li><strong>Komunikacja naukowa</strong> (struktura rozdziałów, dyskusja ograniczeń, spójność terminologii, korekta językowa).</li>
+</ol>
+
+<p class="text-justify">Jednocześnie to właśnie w&nbsp;tych obszarach SI najłatwiej generuje <strong>pozór jakości</strong>: tekst brzmi mądrze, ale jest powierzchowny lub błędny; kod “wygląda poprawnie”, ale błędnie interpretuje przypadki brzegowe. Dlatego całą resztę wpisu traktuj jako instrukcję <strong>jak korzystać z&nbsp;SI, żeby nie wpaść do króliczej nory</strong>.</p>
+
+<blockquote class="important text-justify">
+
+  <p><i class="fas fa-exclamation-circle"></i> <strong>Ważne</strong></p>
+
+  <p>Pamiętaj <strong>SI to asystent, nie współautor</strong>, a&nbsp;ostateczna odpowiedzialność spoczywa na <strong>autorze</strong>. Rekomendacje Politechniki Warszawskiej tylko to wzmacniają: odpowiedzialność użytkownika, weryfikacja, legalność, prywatność oraz obowiązek oznaczania treści generowanych przez sztuczną inteligencję.</p>
+
+</blockquote>
+
+<h2 class="text-justify" id="mapa-procesu-tworzenia-pracy-dyplomowej-gdzie-si-pomaga-a-gdzie-najłatwiej-o-nadużycie">Mapa procesu tworzenia pracy dyplomowej: gdzie SI pomaga, a&nbsp;gdzie najłatwiej o&nbsp;nadużycie</h2>
+
+<p>Etapy pisania pracy dyplomowej można podzielić na kilka kluczowych faz, a&nbsp;każda z&nbsp;nich ma swoje specyficzne zadania i&nbsp;wyzwania.</p>
+
+<h3 id="planowanie-temat-zakres-pytania-badawcze-kryteria-sukcesu"><i class="fas fa-project-diagram"></i>   Planowanie: temat, zakres, pytania badawcze, kryteria sukcesu</h3>
+
+<p><strong>Sztuczna inteligencja pomaga</strong>:</p>
+<ul>
+  <li>wygenerować warianty tytułu i&nbsp;zakresu,</li>
+  <li>doprecyzować pytania badawcze i&nbsp;hipotezy robocze,</li>
+  <li>zaproponować strukturę rozdziałów zgodną z&nbsp;konwencją prac technicznych,</li>
+  <li>rozbić projekt na kamienie milowe i&nbsp;sensowny harmonogram.</li>
+</ul>
+
+<p><strong>Ryzyka</strong>:</p>
+<ul>
+  <li>temat “ładny na slajdach”, ale niewykonalny (brak danych, za duży zakres, brak metryk).</li>
+</ul>
+
+<p><strong>Zabezpieczenia</strong>:</p>
+<ul>
+  <li>SI może pomagać w&nbsp;robieniu burzy mózgów, ale <em>decyzje podejmujesz Ty</em> po konsultacji z&nbsp;promotorem.</li>
+</ul>
+
+<h3 id="badania-przegląd-literatury-streszczanie-mapowanie-obszaru-tematycznego-identyfikacja-luk"><i class="fas fa-search"></i>   Badania: przegląd literatury, streszczanie, mapowanie obszaru tematycznego, identyfikacja luk</h3>
+
+<p><strong>SI pomaga</strong>:</p>
+<ul>
+  <li>wygenerować słowa kluczowe (synonimy, terminy branżowe, skróty),</li>
+  <li>streszczać <em>dostarczone</em> publikacje,</li>
+  <li>wyciągać metodologie i&nbsp;wnioski,</li>
+  <li>identyfikować luki i&nbsp;spory w&nbsp;literaturze,</li>
+  <li>proponować kolejne publikacje do przeczytania (na podstawie Twoich notatek),</li>
+  <li>organizować notatki (np. tabela: publikacja -&gt; metoda -&gt; wnioski -&gt; ograniczenia),</li>
+  <li>budować mapę powiązań (co cytuje co, jakie są szkoły i&nbsp;spory).</li>
+</ul>
+
+<p class="text-justify">Do tego celu można wykorzystać narzędzia pozwalające pracować z&nbsp;konkretnymi zadaniami, np.: semantyczne wyszukiwanie, inteligentne streszczenia, rekomendacje kontekstowe.</p>
+
+<p><strong>Ryzyka</strong>:</p>
+<ul>
+  <li>“halucynacje” bibliografii (nieistniejące pozycje),</li>
+  <li>błędna interpretacja wniosków (model domyśla się kontekstu),</li>
+  <li>zbyt szybka synteza bez selekcji jakości.</li>
+</ul>
+
+<p><strong>Zabezpieczenia</strong>:</p>
+<ul>
+  <li>nie dopuszczasz do pracy cytowania, którego nie potwierdziłeś w&nbsp;bazie/źródle,</li>
+  <li>prowadzisz notatki z&nbsp;lektury (Twoje słowa + cytat z&nbsp;numerem strony),</li>
+  <li>masz menedżer bibliografii (np. Zotero/Mendeley) i&nbsp;porządek metadanych.</li>
+</ul>
+
+<h3 id="metodyka-i-projekt-eksperymentu"><i class="fas fa-flask"></i>   Metodyka i&nbsp;projekt eksperymentu</h3>
+
+<p>Tu jest największa wartość — i&nbsp;największa pułapka. SI może pomóc w:</p>
+<ul>
+  <li>zaproponować pipeline eksperymentalny (dane → preprocessing → model → ewaluacja),</li>
+  <li>dobrać metryki i&nbsp;testy statystyczne (w uproszczonym zakresie),</li>
+  <li>wygenerować plan porównawczy i&nbsp;ablation study,</li>
+  <li>zidentyfikować zagrożenia trafności (validity threats).</li>
+</ul>
+
+<p><strong>Ryzyka</strong>:</p>
+<ul>
+  <li>generowanie “standardowej” metodyki, która nie pasuje do Twoich danych,</li>
+  <li>pseudo-uzasadnienia (“bo tak robią wszyscy”), bez źródeł,</li>
+  <li>pomieszanie metryk (np. mylenie accuracy z&nbsp;balanced accuracy w&nbsp;klasach niezbalansowanych).</li>
+</ul>
+
+<p><strong>Zabezpieczenia</strong>: każdy element metodyki musi mieć jedną z&nbsp;trzech podstaw:</p>
+<ol>
+  <li>źródło - artykuł/standard,</li>
+  <li>empirię - twoje wyniki, opracowane własnymi skryptami, etc.,</li>
+  <li>argument techniczny - dlaczego akurat to działa w&nbsp;Twoim problemie.</li>
+</ol>
+
+<p>SI może pomóc w&nbsp;sformułowaniu, ale nie może być fundamentem.</p>
+
+<h3 id="implementacja-i-kod-gdzie-si-jest-najsilniejsze-ale-też-najniebezpieczniejsze"><i class="fas fa-spinner fa-pulse fa-fw"></i>   Implementacja i&nbsp;kod: gdzie SI jest najsilniejsze, ale też najniebezpieczniejsze</h3>
+
+<p><strong>SI pomaga</strong>:</p>
+<ul>
+  <li>szkicować strukturę repo (src/tests/config/docs),</li>
+  <li>pisać testy jednostkowe i&nbsp;przykładowe dane,</li>
+  <li>refaktoryzować (np. rozdzielenie warstw, lepsze nazwy, eliminacja duplikacji),</li>
+  <li>tłumaczyć błędy, sugerować fixy,</li>
+  <li>proponować zabezpieczenia i&nbsp;edge-case’y.</li>
+</ul>
+
+<p><strong>Ryzyka</strong>:</p>
+<ul>
+  <li>podatności i&nbsp;złe praktyki bezpieczeństwa,</li>
+  <li>błędy ukryte w&nbsp;“ładnym” kodzie,</li>
+  <li>konflikt licencji / niejawne kopiowanie wzorców.</li>
+</ul>
+
+<p><strong>Zabezpieczenie</strong>:</p>
+<ul>
+  <li>testy + statyczna analiza (lint, type-check, security linters),</li>
+  <li>code review (nawet własne: “tryb recenzenta” w&nbsp;SI),</li>
+  <li>commit history pokazująca Twój wkład i&nbsp;ewolucję rozwiązania.</li>
+</ul>
+
+<h3 id="pisanie-rozdziałów-si-jako-zapychacz-stron-nie-jako-autor"><i class="fas fa-pen"></i>   Pisanie rozdziałów: SI jako “zapychacz stron”, nie jako autor</h3>
+
+<p class="text-justify">W żadnym wypadku nie należy używać SI do generowania gotowych rozdziałów, które potem tylko “dopieszczasz”. To jest dokładnie ten typ praktyki, który prowadzi do tekstu “ładnego, ale płytkiego” i&nbsp;jest łatwo wykrywalny przez detektory. SI może być użyte do wsparcia, ale nie do zastąpienia Twojej pracy intelektualnej.</p>
+
+<p><strong>SI pomaga</strong>:</p>
+<ul>
+  <li>ułożyć akapit: teza → argument → źródło → wniosek,</li>
+  <li>zaproponować alternatywne ujęcia tego samego problemu,</li>
+  <li>uporządkować logikę wywodu.</li>
+</ul>
+
+<p><strong>Czerwone linie</strong>:</p>
+<ul>
+  <li>nie kopiujesz całych rozdziałów wygenerowanych przez model,</li>
+  <li>nie pozwalasz SI “dopowiadać” wyników, których nie masz,</li>
+  <li>nie cytujesz SI jako źródła naukowego.</li>
+</ul>
+
+<h3 id="finalizacja-pracy-styl-spójność-bibliografia-przygotowanie-do-obrony"><i class="fas fa-check">   Finalizacja pracy: styl, spójność, bibliografia, przygotowanie do obrony</i></h3>
+
+<p><strong>SI pomaga</strong>:</p>
+<ul>
+  <li>korekta językowa i&nbsp;styl akademicki (zwłaszcza spójność terminologii),</li>
+  <li>sprawdzenie struktury rozdziałów i&nbsp;logiki argumentacji,</li>
+  <li>sprawdzanie, czy wnioski wynikają z&nbsp;danych, a&nbsp;nie z&nbsp;narracji,</li>
+  <li>kontrola spójności cytowań i&nbsp;bibliografii,</li>
+  <li>przygotowanie do obrony: generowanie pytań i&nbsp;kontrargumentów.</li>
+</ul>
+
+<p><strong>Ryzyka</strong>:</p>
+<ul>
+  <li>“wygładzenie” tekstu do poziomu, gdzie traci precyzję techniczną,</li>
+  <li>ujednolicenie stylu (jeden z&nbsp;sygnałów, które detektory mogą interpretować jako tekst maszynowy) - zwłaszcza jak zostanie zrobione “za bardzo”.</li>
+</ul>
+
+<p><strong>Zabezpieczenia</strong>:</p>
+<ul>
+  <li>finalny tekst brzmi jak <em>Ty</em> — precyzyjnie, technicznie, z&nbsp;Twoimi decyzjami. Nie zawsze “ładnie”, ale “Twoje”.</li>
+</ul>
+
+<h2 id="antyplagiat-i-detekcja-si-jak-myśleć-o-ryzyku-realistycznie">Antyplagiat i&nbsp;detekcja SI: jak myśleć o&nbsp;ryzyku realistycznie</h2>
+
+<p class="text-justify">Aktualnie w&nbsp;Polsce funkcjonuje <strong>JSA (Jednolity System Antyplagiatowy)</strong> i&nbsp;opisuje daje możliwość rozszerzania weryfikacji o&nbsp;sygnały użycia SI. Niezależnie od nazwy konkretnego modułu, zasada bezpieczeństwa jest stała:</p>
+
+<blockquote class="important text-justify">
+
+  <p><i class="fas fa-exclamation-circle"></i> <strong>Ważne</strong></p>
+
+  <p><strong>Najlepszą obroną nie jest “ukrywanie”, tylko transparentność + dowody procesu twórczego</strong>.</p>
+
+</blockquote>
+
+<p>W praktyce “dowody procesu twórczego” to:</p>
+<ul>
+  <li>repozytorium z&nbsp;historią commitów,</li>
+  <li>notatnik eksperymentów (parametry, seed, wersje danych),</li>
+  <li>skrypty generujące wykresy i&nbsp;tabele,</li>
+  <li>log użycia SI (kiedy, do czego, co zweryfikowałeś),</li>
+  <li>pliki robocze / wersje (nie tylko finalny PDF).</li>
+</ul>
+
+<p>Warto stosować strategię wersjonowania tekstu. To jest dokładnie ten typ praktyki, który ułatwia obronę Twojego autorstwa:</p>
+<ul>
+  <li>1.0 surowy,</li>
+  <li>1.5 wsparcie SI oznaczone,</li>
+  <li>2.0 przepisanie własnymi słowami itd.</li>
+</ul>
+
+<h2 id="kontrakt-z-promotorem-ustal-reguły-na-starcie">“Kontrakt” z&nbsp;promotorem: ustal reguły na starcie</h2>
+
+<p>Wielu konfliktów da się uniknąć jedną rozmową w&nbsp;1-2 tygodniu pisania praca. SI może być użyte do konspektu, a&nbsp;potem konspekt należy skonsultować z&nbsp;promotorem. Nie należy ukrywać, że korzystasz z&nbsp;SI, ale też nie musisz od razu wchodzić w&nbsp;szczegóły. Możesz zacząć od prostego kontraktu, który potem rozbudujesz w&nbsp;miarę postępów.</p>
+
+<p><strong>Minimalny kontrakt</strong> (1 strona, mail lub notatka):</p>
+<ul>
+  <li><em>Dozwolone</em>: brainstorming, konspekt, korekta językowa, propozycje testów, wsparcie w&nbsp;refaktoryzacji.</li>
+  <li><em>Niedozwolone</em>: generowanie gotowych rozdziałów, generowanie wyników, maskowanie plagiatu.</li>
+  <li><em>Wymagane</em>: ujawnienie w&nbsp;pracy + log użycia + weryfikacja źródeł.</li>
+</ul>
+
+<blockquote class="important text-justify">
+
+  <p><i class="fas fa-exclamation-circle"></i> <strong>Ważne</strong></p>
+
+  <p>Jeśli promotor ma własne zasady — wygrywają zasady promotora (rekomendacje Politechniki Warszawskiej dopuszczają możliwość zakazu używania generatywnej sztucznej inteligencji konkretnych sytuacjach).</p>
+
+</blockquote>
+
+<h2 id="przykładowy-workflow-dla-pracy-dyplomowej---wariant-praktyczny">Przykładowy Workflow dla pracy dyplomowej - wariant praktyczny</h2>
+
+<p>Poniższy plan jest przykładowym rozwiązaniem które polecam moim dyplomantom. Dostosuj tygodnie do swojego kalendarza i&nbsp;trybu badań.</p>
+
+<h3 id="tydzień-12-planowanie-i-konspekt">Tydzień 1–2: Planowanie i&nbsp;konspekt</h3>
+<ul>
+  <li>SI: burza mózgów + 2–3 warianty struktury,</li>
+  <li>Output: 1–2 strony konspektu + lista metryk + ryzyka + plan danych,</li>
+  <li>Spotkanie: zatwierdzenie przez promotora.</li>
+</ul>
+
+<h3 id="tydzień-36-literatura-i-metodyka">Tydzień 3–6: Literatura i&nbsp;metodyka</h3>
+<ul>
+  <li>SI: generowanie strategii wyszukiwania, streszczanie publikacji (z obowiązkowym cytowaniem fragmentów wejściowych), mapowanie sporów,</li>
+  <li>Output: przegląd literatury w&nbsp;notatkach + tabela “publikacja → metoda → wnioski → ograniczenia”.</li>
+</ul>
+
+<h3 id="tydzień-710-implementacja-i-eksperymenty">Tydzień 7–10: Implementacja i&nbsp;eksperymenty</h3>
+<ul>
+  <li>SI: szkielety kodu, testy, refaktoryzacja, diagnostyka błędów,</li>
+  <li>Output: działający pipeline + raport wyników + skrypty reprodukcji.</li>
+</ul>
+
+<h3 id="tydzień-1112-finalizacja">Tydzień 11–12: Finalizacja</h3>
+<ul>
+  <li>SI: korekta językowa, spójność terminologii, kontrola bibliografii, przygotowanie do obrony,</li>
+  <li>Output: finalny tekst + aneks ujawnienie + listy kontrolne.</li>
+</ul>
+
+<h2 id="wersjonowanie-i-dokumentowanie-prosta-metoda-która-ratuje-skórę">Wersjonowanie i&nbsp;dokumentowanie: prosta metoda, która ratuje skórę</h2>
+
+<p>Powyższy workflow jest dobry, bo spełnia jednocześnie trzy cele: transparentność, jakość i&nbsp;obronę autorstwa. Transparentność, bo masz log użycia SI i&nbsp;historię wersji; jakość, bo każdy etap ma swoje zabezpieczenia; obrona autorstwa, bo pokazujesz ewolucję pracy i&nbsp;swój wkład.</p>
+
+<h3 id="proponowany-schemat-wersji">Proponowany schemat wersji</h3>
+<ul>
+  <li><strong>1.0</strong>: surowe notatki / szkic (Twoje).</li>
+  <li><strong>1.5</strong>: rozbudowa z&nbsp;pomocą SI (<em>oznaczone fragmenty</em>).</li>
+  <li><strong>2.0</strong>: własne przeformułowanie i&nbsp;dopasowanie do kontekstu.</li>
+  <li><strong>2.5</strong>: weryfikacja źródeł + spójności + sanity check wyników.</li>
+  <li><strong>3.0</strong>: finalna redakcja + antyplagiat + przygotowanie obrony.</li>
+</ul>
+
+<h3 id="jak-oznaczać-fragmenty-si-bez-niszczenia-pracy">Jak “oznaczać” fragmenty SI bez niszczenia pracy</h3>
+<p>Opcje:</p>
+<ul>
+  <li>kolor w&nbsp;edytorze (tylko roboczo),</li>
+  <li>komentarze w&nbsp;pliku Latex/Markdown,</li>
+  <li>osobny plik loga z&nbsp;odwołaniami do sekcji.</li>
+</ul>
+
+<h2 id="jak-opisać-użycie-si-w-pracy-gotowe-szablony-metodyka--aneks">Jak opisać użycie SI w&nbsp;pracy: gotowe szablony (metodyka + aneks)</h2>
+
+<p>Poniższe szablony są zgodne z&nbsp;duchem rekomendacji PW o&nbsp;oznaczaniu materiałów GenSI.
+Dostosuj do wskazówek promotora.</p>
+
+<h3 id="krótka-sekcja-w-metodyce-1-akapit">Krótka sekcja w&nbsp;metodyce (1 akapit)</h3>
+<p class="text-justify"><strong>Wykorzystanie narzędzi GenSI</strong><br />
+W&nbsp;procesie przygotowania pracy wykorzystano narzędzia generatywnej sztucznej inteligencji wyłącznie jako wsparcie (m.in. do porządkowania konspektu, krytycznej weryfikacji spójności argumentacji oraz korekty językowej). Treści merytoryczne, definicje oraz odwołania do literatury zostały zweryfikowane przez autora na podstawie oryginalnych źródeł. Autor ponosi pełną odpowiedzialność za poprawność i&nbsp;kompletność pracy oraz stosuje zasady zgodne z&nbsp;rekomendacjami Politechniki Warszawskiej dotyczącymi korzystania z&nbsp;GenSI.</p>
+
+<h3 id="aneks-rejestr-użycia-si-si-usage-log">Aneks: rejestr użycia SI (SI usage log)</h3>
+<p>Możesz wkleić jako tabelę:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Narzędzie / model</th>
+      <th>Cel</th>
+      <th>Wejście (opis)</th>
+      <th>Wyjście (opis)</th>
+      <th>Weryfikacja (jak?)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-03-01</td>
+      <td>LLM</td>
+      <td>Konspekt rozdz. 2</td>
+      <td>Notatki własne + lista źródeł</td>
+      <td>Propozycja nagłówków</td>
+      <td>Akceptacja promotora</td>
+    </tr>
+    <tr>
+      <td>2026-03-12</td>
+      <td>LLM</td>
+      <td>Recenzja dyskusji</td>
+      <td>Draft rozdz. 5</td>
+      <td>Lista luk i&nbsp;sugestii</td>
+      <td>Poprawki + odniesienia do wyników</td>
+    </tr>
+    <tr>
+      <td>2026-04-04</td>
+      <td>LLM</td>
+      <td>Testy jednostkowe</td>
+      <td>Opis funkcji + API</td>
+      <td>Szkic testów</td>
+      <td>Uruchomienie w&nbsp;CI</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="oświadczenie-co-si-robiło-a-czego-nie-robiło">Oświadczenie “co SI robiło, a&nbsp;czego nie robiło”</h3>
+<ul>
+  <li>SI <strong>nie</strong> generowało wyników ani danych.</li>
+  <li>SI <strong>nie</strong> było źródłem naukowym.</li>
+  <li>SI <strong>nie</strong> pisało finalnych rozdziałów w&nbsp;formie kopiuj-wklej.</li>
+  <li>SI <strong>było</strong> użyte do korekty i&nbsp;wsparcia struktury / testów.</li>
+</ul>
+
+<h2 class="text-justify" id="gotowe-do-użycia-listy-kontrolne-do-pracy-dyplomowej-tworzonej-z-pomocą-sztucznej-inteligencji-i-nie-tylko">Gotowe do użycia listy kontrolne do pracy dyplomowej tworzonej z&nbsp;pomocą sztucznej inteligencji (i nie tylko)</h2>
+
+<h3 id="lista-kontrolna-zgodności-użycia-si-z-rekomendacjami-politechniki-warszawskiej">Lista kontrolna zgodności użycia SI z&nbsp;rekomendacjami Politechniki Warszawskiej</h3>
+<ul>
+  <li>Nie wklejałem do zapytań danych osobowych ani informacji niepublicznych,</li>
+  <li>Każdy fakt i&nbsp;cytowanie zweryfikowałem w&nbsp;źródle,</li>
+  <li>Oznaczyłem użycie generatywnej sztucznej inteligencji i&nbsp;podaję źródło narzędzia,</li>
+  <li>Ustaliłem z&nbsp;promotorem dopuszczalny zakres użycia,</li>
+  <li>Mam log użycia SI oraz historię wersji tworzenia pracy dyplomowej.</li>
+</ul>
+
+<h3 id="lista-kontrolna-jakości-pracy-dyplomowej-niezależnie-od-si">Lista kontrolna jakości pracy dyplomowej (niezależnie od SI)</h3>
+<ul>
+  <li>Cel pracy jest mierzalny (metryki, kryteria sukcesu),</li>
+  <li>Metodyka jest odtwarzalna (wersje, parametry, dane),</li>
+  <li>Wyniki wynikają z&nbsp;uruchomionych eksperymentów, a&nbsp;nie z&nbsp;narracji,</li>
+  <li>W dyskusji są ograniczenia i&nbsp;zagrożenia trafności,</li>
+  <li>Wnioski nie wykraczają poza dane.</li>
+</ul>
+
+<h3 id="lista-kontrolna-do-obrony">Lista kontrolna do obrony</h3>
+<ul>
+  <li>Umiem uzasadnić wybór danych, metryk i&nbsp;architektury,</li>
+  <li>Umiem wskazać 3 ograniczenia pracy i&nbsp;3 kierunki rozwoju,</li>
+  <li>Potrafię odtworzyć kluczowy eksperyment (polecenie/skrypt),</li>
+  <li>Umieszczam w&nbsp;pracy informacje o&nbsp;użyciu SI i&nbsp;potrafię je wyjaśnić.</li>
+</ul>
+
+<h2 id="najczęstsze-wpadki-i-jak-ich-uniknąć-z-praktyki-seminarium">Najczęstsze “wpadki” i&nbsp;jak ich uniknąć (z praktyki seminarium)</h2>
+
+<ol>
+  <li><strong>SI wymyśla literaturę</strong> -&gt; rozwiązanie: żadnych cytowań bez potwierdzenia; SI ma dawać słowa kluczowe i&nbsp;tropy, ale nie może być źródłem naukowym.</li>
+  <li><strong>SI “dopowiada” wyniki</strong> -&gt; rozwiązanie: opis wyników tylko z&nbsp;tabel/wykresów generowanych przez Twoje skrypty.</li>
+  <li><strong>Brak dziennika pracy</strong> -&gt; rozwiązanie: proste dzienniki - markdow, text, etc… - z&nbsp;datą, celem, narzędziem, weryfikacją.</li>
+  <li><strong>Wklejanie danych wrażliwych</strong> -&gt; rozwiązanie: anonimizacja lub praca na streszczeniach/cechach, nie surowych rekordach; trzymanie się rekomendacji Politechniki Warszawskiej.</li>
+  <li><strong>Ujednolicony “SI-owy” styl</strong> -&gt; rozwiązanie: finalne przeformułowanie własnym językiem i&nbsp;dopasowanie do terminologii Twojej dziedziny.</li>
+</ol>
+
+<h2 id="rekomendacje-politechniki-warszawskiej-czyli-zasady-które-powinieneś-znać-zanim-napiszesz-pierwszy-prompt">Rekomendacje Politechniki Warszawskiej, czyli zasady, które powinieneś znać zanim napiszesz pierwszy prompt</h2>
+
+<p class="text-justify">Senat Politechniki Warszawskiej w&nbsp;rekomendacjach o&nbsp;generatywnej sztucznej inteligencji podkreśla kilka kluczowych reguł praktycznych. Poniżej tłumaczę niektóre z&nbsp;nich.</p>
+
+<h3 id="si-jest-dopuszczalne-jako-wsparcie--ale-odpowiedzialność-za-treść-jest-twoja">SI jest dopuszczalne jako wsparcie — ale odpowiedzialność za treść jest Twoja</h3>
+
+<p class="text-justify">Rekomendacje mówią wprost: <strong>za sposób wykorzystania treści wytworzonych przez generatywną sztuczną inteligencję odpowiada użytkownik</strong>. 
+Konsekwencja: na obronie nie działa “bo ChatGPT tak powiedział”. Każde twierdzenie, każda decyzja architektoniczna, wykorzystana metodyka, zacytowana pozycja literatury oraz każdy wniosek musi być obroniony przez Ciebie.</p>
+
+<h3 id="weryfikuj-si-może-być-niedokładne-wprowadzające-w-błąd-lub-przedstawiać-nieprawdziwe-fakty">Weryfikuj: SI może być niedokładne, wprowadzające w&nbsp;błąd lub przedstawiać nieprawdziwe fakty</h3>
+
+<p class="text-justify">To jest najważniejszy punkt praktyczny: rekomendacje zalecają <strong>weryfikację i&nbsp;krytyczne podejście</strong> do materiałów generowanych przez narzędzia SI. 
+W&nbsp;pracy dyplomowej oznacza to dosłownie:</p>
+<ul>
+  <li><em>fakty i&nbsp;definicje</em> -&gt; sprawdzasz bezpośrednio w&nbsp;publikacji/standardzie/dokumentacji,</li>
+  <li><em>cytowania</em> -&gt; sprawdzasz - czytasz, czy istnieją i&nbsp;czy rzeczywiście wspierają tezę,</li>
+  <li><em>wyniki</em> -&gt; wynikają z&nbsp;Twoich danych, badań i&nbsp;skryptów, nie z&nbsp;narracji SI.</li>
+</ul>
+
+<h3 id="zasady-prawne-i-prywatność-nie-wklejaj-danych-osobowych-i-niepublicznych">Zasady prawne i&nbsp;prywatność: nie wklejaj danych osobowych i&nbsp;niepublicznych</h3>
+
+<p class="text-justify">W rekomendacjach PW jest wprost: <strong>w zapytaniach do sztucznej inteligencji nie można podawać danych osobowych (w tym wrażliwych) ani innych informacji niepublicznych</strong>, chyba że korzystasz z&nbsp;systemu działającego w&nbsp;infrastrukturze uczelni bez komunikacji z&nbsp;serwerami zewnętrznymi.</p>
+
+<p>Przekład na praktykę pracy dyplomowej:</p>
+<ul>
+  <li>nie wklejasz do promptów surowych logów z&nbsp;danymi użytkowników,</li>
+  <li>nie wklejasz treści umów/NDA,</li>
+  <li>nie wklejasz kodu/konfiguracji z&nbsp;kluczami API, tokenami, hasłami,</li>
+  <li>nie wklejasz danych klienta z&nbsp;pracy wdrożeniowej.</li>
+</ul>
+
+<h3 id="autorstwo-i-oznaczanie-treści-si-muszą-być-wyraźnie-oznaczone">Autorstwo i&nbsp;oznaczanie: treści SI muszą być wyraźnie oznaczone</h3>
+
+<p>Rekomendacje wskazują, że student <strong>nie jest autorem treści wytworzonych przez SI</strong> i&nbsp;dlatego <strong>konieczne jest wyraźne oznaczenie takich materiałów z&nbsp;podaniem źródła pozyskania informacji</strong>.</p>
+
+<p>W praktyce pracy dyplomowej oznaczanie może wyglądać jak:</p>
+<ul>
+  <li>akapit w&nbsp;metodyce: <em>“W procesie redakcji użyto narzędzi SI do korekty językowej oraz generowania propozycji struktury; treści merytoryczne zweryfikowano w&nbsp;źródłach; autor ponosi pełną odpowiedzialność …“</em>,</li>
+  <li>aneks: “Zakres wykorzystania narzędzi SI” + log użycia,</li>
+  <li>w przypadku generowanych ilustracji/wykresów: adnotacja, które elementy były generowane.</li>
+</ul>
+
+<h3 id="prowadzący-pracę-dyplomową-może-zakazać-użycia-si">Prowadzący pracę dyplomową może zakazać użycia SI</h3>
+
+<p class="text-justify">Rekomendacje mówią również, że nauczyciel akademicki może bezpośrednio zakazać użycia SI w&nbsp;określonych zadaniach (kolokwia, egzaminy, ekspertyzy itd.). W&nbsp;swojej pracy dyplomowej interpretuj to pragmatycznie: <strong>ustal z&nbsp;promotorem zasady gry na początku</strong> i&nbsp;miej je w&nbsp;formie krótkiego “kontraktu”.</p>
+
+<blockquote class="important text-justify">
+
+  <p><i class="fas fa-exclamation-circle"></i> <strong>Ważne</strong></p>
+
+  <p>Jeśli wdrożysz trzy rzeczy: <strong>kontrakt z&nbsp;promotorem</strong>, <strong>wersjonowanie + log</strong>, <strong>twardą weryfikację źródeł i&nbsp;wyników</strong>, to SI stanie się realną przewagą &ndash; bez ryzyka, że w&nbsp;ostatnim tygodniu “coś wybuchnie”.</p>
+
+</blockquote>
+
+<p class="text-justify">Więcej zasad znajdziesz bezpośrednio w&nbsp;dokumencie rekomendacji Politechniki Warszawskiej: <a href="/pdf/stanowisko_senatu.pdf">Rekomendacje dotyczące korzystania z&nbsp;generatywnej sztucznej inteligencji w&nbsp;Politechnice Warszawskiej</a>.</p>
+
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=SI w&nbsp;pisaniu pracy dyplomowej&url=https://blog.roszczyk.net/dydaktyka/si-w-pisaniu-pracy-dyplomowej/" title="Udostępnij na Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer/sharer.php?u=https://blog.roszczyk.net/dydaktyka/si-w-pisaniu-pracy-dyplomowej/" title="Udostępnij na Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://blog.roszczyk.net/dydaktyka/si-w-pisaniu-pracy-dyplomowej/&title=SI w&nbsp;pisaniu pracy dyplomowej&summary=Kompleksowy, praktyczny i&nbsp;zgodny z&nbsp;rekomendacjami Politechniki Warszawskiej przewodnik po możliwościach, ograniczeniach i&nbsp;etyce użycia generatywnej sztucznej inteligencji w&nbsp;pracy dyplomowej: od konspektu, przez literaturę i&nbsp;kod, po oświadczenie i&nbsp;listy kontrolne." title="Udostępnij na LinkedIn" rel="nofollow" target="_blank">LinkedIn</a>
+        </div>
+        <div class="page-tag">
+          
+            
+            <a href="/dydaktyka" class="tag">&#35; dydaktyka</a>
+          
+          
+                        
+            
+            <!-- <a href="/tags/praca-dyplomowa" class="tag">&#35; praca dyplomowa</a> -->
+                                
+            <a href="/tags#praca dyplomowa" class="tag">&#35; praca dyplomowa</a>
+                    
+          
+                        
+            
+            <!-- <a href="/tags/studia" class="tag">&#35; studia</a> -->
+                                
+            <a href="/tags#studia" class="tag">&#35; studia</a>
+                    
+          
+                        
+            
+            <!-- <a href="/tags/si" class="tag">&#35; SI</a> -->
+                                
+            <a href="/tags#SI" class="tag">&#35; SI</a>
+                    
+          
+                        
+            
+            <!-- <a href="/tags/etyka" class="tag">&#35; etyka</a> -->
+                                
+            <a href="/tags#etyka" class="tag">&#35; etyka</a>
+                    
+          
+                        
+            
+            <!-- <a href="/tags/ai" class="tag">&#35; AI</a> -->
+                                
+            <a href="/tags#AI" class="tag">&#35; AI</a>
+                    
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+      
+        <div class="copyright">Photo by Sincerely Media on Unsplash</div>
+      
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J283Z0BLK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J283Z0BLK');
+</script>
+
+<!-- StatCounter code for Radoslaw Roszczyk Blog (blog.roszczyk.net) -->
+<script>
+  var sc_project = 12105020;
+  var sc_invisible = 0;
+  var sc_security = "087cd796";
+</script>
+<script async src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript>
+  <div class="statcounter">
+    <a title="Web Analytics" href="https://statcounter.com/" target="_blank" rel="noopener noreferrer">
+      <img class="statcounter"
+           src="https://c.statcounter.com/12105020/0/087cd796/0/"
+           alt="Web Analytics"
+           referrerpolicy="no-referrer-when-downgrade">
+    </a>
+  </div>
+</noscript>
+<!-- End StatCounter Code -->
+
+</body>
+</html>
